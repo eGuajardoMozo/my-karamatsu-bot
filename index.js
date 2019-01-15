@@ -16,11 +16,11 @@ bot.on('ready', function (evt) {
 
 bot.on('message', function(message) {
     // Now, you can use the message variable inside
-    if (message.content === "$talk") { 
+    if (message.content === "$talk") {
+		var randomTimeAux = randomTimes2[Math.floor(Math.random()*randomTimes2.length)];		
         var interval = setInterval (function () {
             // use the message's channel (TextChannel) to send a new message
 			var randomKaraAux = randomKaraTexts[Math.floor(Math.random()*randomKaraTexts.length)];
-			var randomTimeAux = randomTimes2[Math.floor(Math.random()*randomTimes2.length)];
             message.channel.send(randomKaraAux)
             .catch(console.error); // add error handling here
         }, randomTimeAux); 
