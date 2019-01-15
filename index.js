@@ -13,10 +13,8 @@ bot.on('ready', function (evt) {
 
 bot.on('ready', function(message) {
 	var interval = setInterval (function (){
-		bot.sendMessage({
-          message: "pong" // message to send
-        });
-    }, 5000); // time between each interval in milliseconds
+		message.channel.send("123")
+    }, 1 * 3000); // time between each interval in milliseconds
 });
 
 bot.on('message', async message => {
