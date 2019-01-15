@@ -10,7 +10,7 @@ bot.on('ready', function (evt) {
 });
 
 bot.on('message', (message) => {
-    if(message.content.includes('hi')) {
+    if(message.content.includes('hi' || 'hello')) {
         message.reply(hiAux);
     }
 });
