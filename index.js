@@ -10,8 +10,8 @@ bot.on('ready', function (evt) {
 
 bot.on('message', (message) => {
 	var greet = false;
-    if(message.includes('hi') || message.includes('Hi') || message.includes('hello') || message.includes('Hello') || 
-	message.includes('Hey') || message.includes('hey')) {
+    if(message.content.includes('hi') || message.content.includes('Hi') || message.content.includes('hello') || message.content.includes('Hello') || 
+	message.content.includes('Hey') || message.content.includes('hey')) {
 		greet = true;
 		
     }
