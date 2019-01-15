@@ -76,7 +76,11 @@ bot.on('message', async message => {
 			}
 			
 			//had a good night
-			else {
+			else if (message.content.includes('great') || message.content.includes('good') || message.content.includes('alright') || 
+			message.content.includes('fine') || message.content.includes('yes') || message.content.includes('yeah') || 
+			message.content.includes('thank') || message.content.includes('Good') || message.content.includes('Alright') || 
+			message.content.includes('Fine') || message.content.includes('Yes') || message.content.includes('Yeah') || 
+			message.content.includes('Thank') || message.content.includes('well') || message.content.includes('Well')){
 				
 				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
 				message.reply(goodMorningAux);
@@ -88,7 +92,8 @@ bot.on('message', async message => {
 		if(continueHowAreYou == true) {
 			
 			if (message.content.includes('school') || message.content.includes('work') || message.content.includes('office') ||
-			message.content.includes('class')) {
+			message.content.includes('class') || message.content.includes('School') || message.content.includes('Work') || 
+			message.content.includes('Office') || message.content.includes('Class')) {
 				
 				var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
 				message.reply(hiWorkAux);
@@ -114,9 +119,7 @@ bot.on('message', async message => {
 		else if (message.content.includes('good night') || message.content.includes('Good night')) {
 			
 			var nightAux = nightResponses[Math.floor(Math.random()*nightResponses.length)];
-			channel.startTyping();
 			message.reply(nightAux);
-			channel.stopTyping();
 		}
 		
 		//Saying hi, hello, hey
@@ -131,8 +134,8 @@ bot.on('message', async message => {
 		}
 		
 		//Saying goodbye
-		else if (message.content.includes('bye') || message.content.includes('Bye') || message.content.includes('I have to go') || 
-		message.content.includes('i have to go') || message.content.includes('i gotta go') || message.content.includes('I gotta go')) {
+		else if (message.content.includes('bye') || message.content.includes('Bye') || message.content.includes('to go') || 
+		message.content.includes('gotta go') || message.content.includes('Gotta go')) {
 			
 			var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
 			message.reply(byeAux);
