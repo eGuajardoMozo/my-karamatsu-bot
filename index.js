@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
-var greet = false;
 var hiResponses = ["Hello darling!", "Ah, hello my sweet angel :heart: !", "Hello my dear~", "Hello my love :heart_eyes:", "Hey there beautiful :sunglasses:"];
 
 bot.on('ready', function (evt) {
@@ -10,9 +9,10 @@ bot.on('ready', function (evt) {
 });
 
 bot.on('message', (message) => {
+	var greet = false;
     if(message.includes('hi') || message.includes('Hi') || message.includes('hello') || message.includes('Hello') || 
 	message.includes('Hey') || message.includes('hey')) {
-		greet = true
+		greet = true;
 		
     }
 	if (greet) {
