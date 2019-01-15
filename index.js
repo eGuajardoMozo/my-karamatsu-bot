@@ -1,6 +1,9 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
+var continueMorning = false;
+var continueHowAreYou = false;
+
 //KARA'S ANSWERS
 {
 var randomKaraLoveTexts = ["I saw the stars last night and started thinking of you darling. Always glistening so brightly I can't help but smile, but of course the stars could never compare to your beauty. It brings a song to my heart. Today I think I'll go to the roof and write it down so I can sing it to you someday.", "Darling can I just say that you're absolutely amazing? So beautiful and smart, a bright mind and pure heart filled with so much love to share. Sometimes I can't believe how incredibly lucky I was to meet you.", "Today I filled so many pages of poems dedicated to you my flower. It's funny, ever since I met you I've been needing to buy notebooks more often, and the more pages I fill the more my heart swells with all this love I want to convey to you. It feels wonderful.", "I keep having dreams of a future together darling. Every single time I see us happily living together, spending each day by each other's side, and having a family of our own. The day our love takes shape into a brand new life I'll probably think I'm dreaming again. But even in a dream as long as it's with you, I'll be happy.", "Heh, don't mind me love, I just wanted to briefly remind you how much I've hopelessly fallen in love with you. Because I have, and every word that leaves your lips, every single touch of your hand against mine, and every smile directed just to me makes me want to soar and lose myself in this wonderful feeling. You make me the happiest man in the world."];
@@ -61,56 +64,89 @@ bot.on('message', async message => {
 	//so he won't reply to himself
 	if (message.author.bot) return;
 	
-	//GREETINGS AND GOODBYES
-	
-	//Good morning
-	if (message.content.includes('mornin') || message.content.includes('Mornin') || message.content.includes('good morning') || 
-	message.content.includes('Good morning')) {
-		var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];
-		message.reply(morningAux);
-		//had a bad night
-		if (message.content.includes('no') || message.content.includes('No')) {
-			var badMorningAux = badMorningResponses[Math.floor(Math.random()*badMorningResponses.length)];
-			message.reply(badMorningAux);
+	//CONTINUED
+	{
+		if(continueMorning == true) {
+			
+			//had a bad night
+			if (message.content.includes('no') || message.content.includes('No')) {
+				
+				var badMorningAux = badMorningResponses[Math.floor(Math.random()*badMorningResponses.length)];
+				message.reply(badMorningAux);
+			}
+			
+			//had a good night
+			else {
+				
+				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
+				message.reply(goodMorningAux);
+			}
+			
+			continueMorning = false;
 		}
-		//had a good night
-		else {
-			var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
-			message.reply(goodMorningAux);
-		}
-	}
-	
-	//Good night
-	else if (message.content.includes('good night') || message.content.includes('Good night')) {
-		var nightAux = nightResponses[Math.floor(Math.random()*nightResponses.length)];
-		message.reply(nightAux);
-	}
-	
-	//Saying hi, hello, hey
-    else if( message.content.includes('hi') || message.content.includes('Hi') || message.content.includes('Hello') || 
-	message.content.includes('hello') || message.content.includes('Hey') || message.content.includes('hey')) {
-		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
-        message.reply(hiAux);
 		
-		if (message.content.includes('school') || message.content.includes('work') || message.content.includes('office') ||
-		message.content.includes('class')) {
-			var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
-			message.reply(hiWorkAux);
+		if(continueHowAreYou == true) {
+			
+			if (message.content.includes('school') || message.content.includes('work') || message.content.includes('office') ||
+			message.content.includes('class')) {
+				
+				var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
+				message.reply(hiWorkAux);
+			}
+			
+			continueHowAreYou = false;
 		}
-    }
-	
-	//Saying goodbye
-	else if (message.content.includes('bye') || message.content.includes('Bye') || message.content.includes('I have to go') || 
-	message.content.includes('i have to go') || message.content.includes('i gotta go') || message.content.includes('I gotta go')) {
-		var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
-		message.reply(byeAux);
+	}
+
+	//GREETINGS AND GOODBYES	
+	{
+		//Good morning
+		if (message.content.includes('mornin') || message.content.includes('Mornin') || message.content.includes('good morning') || 
+		message.content.includes('Good morning')) {
+			
+			var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
+			message.reply(morningAux);
+						
+			continueMorning = true;
+		}
+		
+		//Good night
+		else if (message.content.includes('good night') || message.content.includes('Good night')) {
+			
+			var nightAux = nightResponses[Math.floor(Math.random()*nightResponses.length)];
+			channel.startTyping();
+			message.reply(nightAux);
+			channel.stopTyping();
+		}
+		
+		//Saying hi, hello, hey
+		else if( message.content.includes('hi') || message.content.includes('Hi') || message.content.includes('Hello') || 
+		message.content.includes('hello') || message.content.includes('Hey') || message.content.includes('hey')) {
+			
+			var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
+			message.reply(hiAux);
+			
+			continueHowAreYou = true;
+			
+		}
+		
+		//Saying goodbye
+		else if (message.content.includes('bye') || message.content.includes('Bye') || message.content.includes('I have to go') || 
+		message.content.includes('i have to go') || message.content.includes('i gotta go') || message.content.includes('I gotta go')) {
+			
+			var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
+			message.reply(byeAux);
+		}
 	}
 	
 	//LOVE AND AFFECTION
-	//Saying I love you
-	if (message.content.includes('love you')) {
-		var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
-		message.reply(loveAux);
+	{
+		//Saying I love you
+		if (message.content.includes('love you')) {
+			
+			var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
+			message.reply(loveAux);
+		}
 	}
 	
 });
