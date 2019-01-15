@@ -12,31 +12,11 @@ bot.on('message', async message => {
 	
 	if (message.author.bot) return;
 	
-    if(message.content.includes('hi')) {
+    if(message.content.includes('hi') || (message.content.includes('Hi') || (message.content.includes('Hello') || 
+	(message.content.includes('hello') || (message.content.includes('Hey') || (message.content.includes('hey')) {
 		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
         message.reply(hiAux);
     }
-	if(message.content.includes('Hi')) {
-		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
-        message.reply(hiAux);
-    }
-	if(message.content.includes('hello')) {
-		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
-        message.reply(hiAux);
-    }
-	if(message.content.includes('Hello')) {
-		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
-        message.reply(hiAux);
-    }
-	if(message.content.includes('hey')) {
-		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
-        message.reply(hiAux);
-    }
-	if(message.content.includes('Hey')) {
-		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
-        message.reply(hiAux);
-    }
-
 });
 
 bot.login(process.env.token);
