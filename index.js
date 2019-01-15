@@ -6,27 +6,10 @@ bot.on('ready', function (evt) {
   bot.user.setActivity(`Here for you my love`);
 });
 
-bot.on("message", async message => {
-
-  if (message.author.bot) return;
-  if (message.channel.type === "dm") return;
-
-  if (message.substring(0, 1) == '!') {
-        var args = message.substring(1).split(' ');
-        var cmd = args[0];
-       
-        args = args.splice(1);
-        switch(cmd) {
-            // !ping
-            case 'hi':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Hello darling!'
-                });
-            break;
-            // Just add any case commands if you want to..
-         }
+bot.on('message', (message) => {
+    if(message.content.includes('hi') || message.content.includes('hello')) {
+        message.reply('Hello darling!');
     }
-  });
+});
 
 bot.login(process.env.token);
