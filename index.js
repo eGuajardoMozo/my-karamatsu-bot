@@ -11,10 +11,15 @@ bot.on('ready', function (evt) {
   bot.user.setActivity(`Here for you my love`);
 });
 
-bot.on('ready', function(message) {
-	var interval = setInterval (function (){
-		channel.send("123")
-    }, 1 * 3000); // time between each interval in milliseconds
+bot.on('message', function(message) {
+    // Now, you can use the message variable inside
+    if (message.content === "$loop") { 
+        var interval = setInterval (function () {
+            // use the message's channel (TextChannel) to send a new message
+            message.channel.send("123")
+            .catch(console.error); // add error handling here
+        }, 1 * 1000); 
+    }
 });
 
 bot.on('message', async message => {
