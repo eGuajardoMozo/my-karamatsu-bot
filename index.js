@@ -16,6 +16,8 @@ var randomTimes = [25200000, 216000000, 19800000, 18000000, 14400000 ]; //in 7, 
 
 var hiResponses = ["Hello darling! How are you doing?", "Ah, hello my sweet angel :heart:! How are you today?", "Hello my dear~:sparkles: How's your day going?", "Hello my love :heart_eyes: Are you having a good day?", "Hey there beautiful :sunglasses: How's it going?"];
 var hiWorkingResponses = ["Always so hardworking, you make me so proud :heart:", "Doing your best I see! Just be sure to not work yourself too hard beautiful", "Ah I see, then I hope you have a good day flower. Be sure to take breaks whenever you need it.", "You're doing wonderfully darling :rose: Thank you for all your hard work.", "Keep doing your best darling, I'm sure all your efforts will be rewarded :kissing_heart:"];
+var hiOkayResponses = ["That's good to know. If my Karamatsu Girl is happy then I'm happy :blue_heart:", "Perfect! I want every day to be a good one for my darling :sunglasses:", "Ah yes, the way it's always meant to be :sparkles:", "Wonderful! If my flower is having a good day then I know for sure so will I", "Ah, nothing but good news! Then I hope the rest of your day goes wonderfully~"];
+var hiBadResponses = ["Don't worry my love! I'll cheer for you! You know I'll always be here as your support :heart:", "Darling... don't worry, I'm certain things will get better soon. So smile, okay?", "It's okay to have bad days my angel, I know what that is like... which is why I'll be here rooting for you. I'll always be by your side.", "Hey... it's going to get better alright? You're not alone, I'm right here with you :heart:", "Then I'll stay by your side supporting you as much as you need my angel. Don't worry, you'll see things will turn out for the best."];
 var byeResponses = ["I'll be here waiting for you my love :heart:", "Take care darling, I miss you already", "See you soon my angel!", "I'll see you later beautiful :rose:", "I'll be here waiting for your return my dearest~"];
 var morningResponses = ["Good morning my sweet angel, did you sleep well?", "Good morning sunshine :heart: did you get the rest you needed?", "Good morning my darling, you slept well?", "Good morning love, did you have a good night's rest?", "Good morning flower, how are you feeling on this brand new morning? :sparkles:"];
 var goodMorningResponses = ["Music to my ears :sparkles: oh well, rather to my eyes I suppose. Heh.", "Wonderful! I wouldn't be surprised if it was because you dreamed of me", "I'm glad you slept well my love. It's a shame I wasn't there to kiss you awake, you must have looked lovely while you slept :heart:", "There's no better way to start the day than with a smile on your lips. I'm glad you slept well angel~", "That's wonderful, maybe someday I'll be blessed enough to wake up by your side"];
@@ -97,6 +99,22 @@ bot.on('message', async message => {
 				
 				var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
 				message.reply(hiWorkAux);
+			}
+			
+			if (message.content.includes('no') || message.content.includes('No')) {
+				
+				var hiBadAux = hiBadResponses[Math.floor(Math.random()*hiBadResponses.length)];
+				message.reply(hiBadAux);
+			}
+			
+			else if (message.content.includes('great') || message.content.includes('good') || message.content.includes('alright') || 
+			message.content.includes('fine') || message.content.includes('okay') || 
+			message.content.includes('thank') || message.content.includes('Good') || message.content.includes('Alright') || 
+			message.content.includes('Fine') || message.content.includes('Okay') || 
+			message.content.includes('Thank') || message.content.includes('well') || message.content.includes('Well')) {
+				
+				var hiOkayAux = hiOkayResponses[Math.floor(Math.random()*hiOkayResponses.length)];
+				message.reply(hiOkayAux);
 			}
 			
 			continueHowAreYou = false;
