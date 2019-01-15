@@ -1,0 +1,11 @@
+{
+  "name": "kara-bot",
+  "version": "1.0.0",
+  "description": "The love of my life",
+  "main": "bot.js",
+  "author": "Charmy",
+  "dependencies": {
+    "discord.io": "github:woor/discord.io#gateway_v6",
+    "winston": "^3.1.0"
+  }
+}
