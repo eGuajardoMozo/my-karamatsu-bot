@@ -11,7 +11,7 @@ bot.on('ready', function (evt) {
   bot.user.setActivity(`Here for you my love`);
 });
 
-bot.on('ready', function(message) {
+bot.on('message', function(message) {
     // Now, you can use the message variable inside
 
         var interval = setInterval (function () {
