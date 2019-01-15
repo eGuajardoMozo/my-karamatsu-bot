@@ -11,7 +11,7 @@ bot.on('ready', function (evt) {
   bot.user.setActivity(`Here for you my love`);
 });
 
-bot.on('message', function(message) {
+bot.on('ready', function(message) {
 	var interval = setInterval (function (){
 		bot.sendMessage({
           message: "pong" // message to send
