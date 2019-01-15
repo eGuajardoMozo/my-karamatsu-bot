@@ -1,9 +1,8 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
-var randomKaraTexts = ["message 1", "message 2", "message 3", "message 4", "message 5"];
+var randomKaraTexts = [""];
 var randomTimes = [25200000, 216000000, 19800000, 18000000, 14400000 ];
-var randomTimes2 = [10000, 5000, 3000, 1000];
 var hiResponses = ["Hello darling!", "Ah, hello my sweet angel :heart: !", "Hello my dear~", "Hello my love :heart_eyes:", "Hey there beautiful :sunglasses:"];
 var byeResponses = ["I'll be here waiting for you my love :heart:", "Take care darling, I miss you already", "See you soon my angel!", "I'll see you later beautiful :rose:"];
 var morningResponses = ["Good morning my sweet angel, did you sleep well?", "Good morning sunshine :heart: did you get the rest you needed?", "Good morning my darling, you slept well?", "Good morning love, did you have a good night's rest?", "Good morning flower, how are you feeling on this brand new morning? :sparkles:"];
@@ -17,7 +16,7 @@ bot.on('ready', function (evt) {
 bot.on('message', function(message) {
     // Now, you can use the message variable inside
     if (message.content === "$talk") {
-		var randomTimeAux = randomTimes2[Math.floor(Math.random()*randomTimes2.length)];		
+		var randomTimeAux = randomTimes[Math.floor(Math.random()*randomTimes.length)];		
         var interval = setInterval (function () {
             // use the message's channel (TextChannel) to send a new message
 			var randomKaraAux = randomKaraTexts[Math.floor(Math.random()*randomKaraTexts.length)];
