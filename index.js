@@ -16,27 +16,27 @@ bot.on('message', async message => {
 	if (message.author.bot) return;
 	
 	//Greetings and goodbyes
-    if( message.content.includes('hi') || message.content.includes('Hi') || message.content.includes('Hello') || 
-	message.content.includes('hello') || message.content.includes('Hey') || message.content.includes('hey')) {
-		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
-        message.reply(hiAux);
-    }
-	
-	if (message.content.includes('bye') || message.content.includes('Bye') || message.content.includes('I have to go') || 
-	message.content.includes('i have to go') || message.content.includes('i gotta go') || message.content.includes('I gotta go')) {
-		var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
-		message.reply(byeAux);
-	}
-	
 	if (message.content.includes('mornin') || message.content.includes('Mornin') || message.content.includes('good morning') || 
 	message.content.includes('Good morning')) {
 		var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];
 		message.reply(morningAux);
 	}
 	
-	if (message.content.includes('good night') || message.content.includes('Good night')) {
+	else if (message.content.includes('good night') || message.content.includes('Good night')) {
 		var nightAux = nightResponses[Math.floor(Math.random()*nightResponses.length)];
 		message.reply(nightAux);
+	}
+	
+    else if( message.content.includes('hi') || message.content.includes('Hi') || message.content.includes('Hello') || 
+	message.content.includes('hello') || message.content.includes('Hey') || message.content.includes('hey')) {
+		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
+        message.reply(hiAux);
+    }
+	
+	else if (message.content.includes('bye') || message.content.includes('Bye') || message.content.includes('I have to go') || 
+	message.content.includes('i have to go') || message.content.includes('i gotta go') || message.content.includes('I gotta go')) {
+		var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
+		message.reply(byeAux);
 	}
 	
 });
