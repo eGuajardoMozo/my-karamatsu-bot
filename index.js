@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
 var hiResponses = ["Hello darling!", "Ah, hello my sweet angel :heart: !", "Hello my dear~", "Hello my love :heart_eyes:", "Hey there beautiful :sunglasses:"];
-var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
 
 bot.on('ready', function (evt) {
   console.log(`${bot.user.username} is online!`);
@@ -10,7 +9,9 @@ bot.on('ready', function (evt) {
 });
 
 bot.on('message', (message) => {
-    if(message.content.includes('hi' || 'hello')) {
+    if(message.includes('hi') || message.includes('Hi') || message.includes('hello') || message.includes('Hello') || 
+	message.includes('Hey') || message.includes('hey')) {
+		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
         message.reply(hiAux);
     }
 });
