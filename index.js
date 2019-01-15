@@ -12,12 +12,11 @@ bot.on('ready', function (evt) {
 });
 
 bot.on('message', function(message) {
-	if (message.content === "$loop") {
-		var interval = setInterval(function () {
-			message.reply("123")
-			.catch(console.error);
-		}, 1 * 500);
-	}		
+	var interval = setInterval (function (){
+		bot.sendMessage({
+          message: "pong" // message to send
+        });
+    }, 5000); // time between each interval in milliseconds
 });
 
 bot.on('message', async message => {
