@@ -9,8 +9,8 @@ bot.on('ready', function (evt) {
 });
 
 bot.on('message', (message) => {
-    if(message.includes('hi') || message.includes('Hi') || message.includes('hello') || message.includes('Hello') || 
-	message.includes('Hey') || message.includes('hey')) {
+    if(message.content.includes('hi') || message.content.includes('Hi') || message.content.includes('hello') || message.content.includes('Hello') || 
+	message.content.includes('Hey') || message.content.includes('hey')) {
 		var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
         message.reply(hiAux);
     }
