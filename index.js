@@ -11,6 +11,15 @@ bot.on('ready', function (evt) {
   bot.user.setActivity(`Here for you my love`);
 });
 
+bot.on('message', function(message) {
+	if (message.content === "$loop") {
+		var interval = setInterval(function () {
+			message.channel.send("123")
+			.catch(console.error);
+		}, 1 * 1000;
+	}		
+});
+
 bot.on('message', async message => {
 	//so he won't reply to himself
 	if (message.author.bot) return;
