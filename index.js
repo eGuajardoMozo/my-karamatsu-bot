@@ -13,7 +13,7 @@ bot.on('ready', function (evt) {
 
 bot.on('ready', function(message) {
 	var interval = setInterval (function (){
-		message.channel.send("123")
+		message.reply("123")
     }, 1 * 3000); // time between each interval in milliseconds
 });
 
