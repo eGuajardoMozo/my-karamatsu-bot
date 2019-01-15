@@ -14,9 +14,9 @@ bot.on('ready', function (evt) {
 bot.on('message', function(message) {
 	if (message.content === "$loop") {
 		var interval = setInterval(function () {
-			message.channel.send("123")
+			message.reply("123")
 			.catch(console.error);
-		}, 1 * 1000);
+		}, 1 * 500);
 	}		
 });
 
