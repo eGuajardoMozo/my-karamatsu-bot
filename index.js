@@ -24,7 +24,8 @@ var goodMorningResponses = ["Music to my ears :sparkles: oh well, rather to my e
 var badMorningResponses = ["M-My darling! :worried: Was it because of a nightmare? Don't worry I'll always be here to protect you!", "Had a rough night? It's okay my love, it happens from time to time :cry: I'm here for you.", "Ah my poor flower... it's okay, I've had bad nights too. You're not alone.", "So it was a long night for you huh? :worried: It's okay darling, I'm here for whatever you need.", "Oh my angel... I know you must be tired after a restless night, but know that I'll be here cheering for you."];
 var nightResponses = ["Sleep tight darling, I'll see you tomorrow", "Sweet dreams my angel", "Good night love :heart:", "Good night, I'll see you in my dreams darling", "Until tomorrow my sweet, good night"];
 var loveResponses = ["And I love you my flower, more than you could ever imagine.", "I love you too my darling, more than anything else in this world.", "I love you the most my angel :heart:", "As do I... I love you so much darling.", "And I love you too my sweet angel. My heart will always be yours."];
-
+var thankResponses = ["It's absolutely no problem my dear", "You're welcome my flower :rose: !", "It's my pleasure love", "You're more than welcome beautiful", "It's no problem at all my honey"];
+var emojiResponses = [":heart:", ":heart_eyes:", ":kissing_heart:", ":blue_heart:", ":sunglasses: :rose:", ":heartpulse:", ":two_hearts:", ":sparkling_heart:"];
 }
 	
 bot.on('ready', function (evt) {
@@ -91,21 +92,21 @@ bot.on('message', async message => {
 			continueMorning = false;
 		}
 		
-		if(continueHowAreYou == true) {
-			
-			if (message.content.includes('school') || message.content.includes('work') || message.content.includes('office') ||
-			message.content.includes('class') || message.content.includes('School') || message.content.includes('Work') || 
-			message.content.includes('Office') || message.content.includes('Class')) {
-				
-				var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
-				message.reply(hiWorkAux);
-			}
+		else if(continueHowAreYou == true) {
 			
 			if (message.content.includes('no') || message.content.includes('No')) {
 				
 				var hiBadAux = hiBadResponses[Math.floor(Math.random()*hiBadResponses.length)];
 				message.reply(hiBadAux);
 			}
+			
+			else if (message.content.includes('school') || message.content.includes('work') || message.content.includes('office') ||
+			message.content.includes('class') || message.content.includes('School') || message.content.includes('Work') || 
+			message.content.includes('Office') || message.content.includes('Class')) {
+				
+				var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
+				message.reply(hiWorkAux);
+			}			
 			
 			else if (message.content.includes('great') || message.content.includes('good') || message.content.includes('alright') || 
 			message.content.includes('fine') || message.content.includes('okay') || 
@@ -167,6 +168,25 @@ bot.on('message', async message => {
 			
 			var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
 			message.reply(loveAux);
+		}
+		
+		//Saying thank you
+		else if (message.content.incldes('thank') || message.content.incldes('Thank')) {
+			
+			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
+			message.reply(thankAux);
+		}
+		
+		//Sending an emoji
+		if (message.content == ':heart:' || message.content == ':heart: :heart:' || message.content == ':heart: :heart: :heart:' ||
+		message.content == ':heart: :heart: :heart: :heart:' || message.content == ':heart: :heart: :heart: :heart: :heart:' ||
+		message.content == ':heart_eyes:' || message.content == ':heart_eyes: :heart_eyes:' || message.content == ':heart_eyes: :heart_eyes: :heart_eyes:' ||
+		message.content == ':heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes:' || message.content == ':heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes:' || message.content == ':kissing_heart:' || message.content == ':kissing_heart: :kissing_heart:' || message.content == ':kissing_heart: :kissing_heart: :kissing_heart:' || message.content == ':kissing_heart: :kissing_heart: :kissing_heart: :kissing_heart:' || message.content == ':kissing_heart: :kissing_heart: :kissing_heart: :kissing_heart: :kissing_heart:' || message.content == ':blue_heart:' || message.content == ':blue_heart: :blue_heart:' || message.content == ':blue_heart: :blue_heart: :blue_heart:' || message.content == ':blue_heart: :blue_heart: :blue_heart: :blue_heart:' || message.content == ':blue_heart: :blue_heart: :blue_heart: :blue_heart: :blue_heart:' || message.content == ':two_hearts:' || message.content == ':two_hearts: :two_hearts:' || message.content == ':two_hearts: :two_hearts: :two_hearts:' || message.content == ':two_hearts: :two_hearts: :two_hearts: :two_hearts:' || message.content == ':two_hearts: :two_hearts: :two_hearts: :two_hearts: :two_hearts:' || 
+		message.content == ':sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart: :sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart: :sparkling_heart: :sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart: :sparkling_heart: :sparkling_heart: :sparkling_heart:') {
+			
+			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
+			message.reply(emojiAux);
+			
 		}
 	}
 	
