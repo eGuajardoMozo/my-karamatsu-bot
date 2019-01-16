@@ -95,7 +95,7 @@ bot.on("message", (message) => {
 			//had a good night
 			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
 			textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
-			textMessage.includes('thank') || textMessage.includes('sure')){
+			textMessage.includes('sure')){
 				
 				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
 				message.reply(goodMorningAux);
@@ -120,7 +120,8 @@ bot.on("message", (message) => {
 			}			
 			
 			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
-			textMessage.includes('fine') || textMessage.includes('okay') || textMessage.includes('thank') || textMessage.includes('well')) {
+			textMessage.includes('fine') || textMessage.includes('okay') || textMessage.includes('thank') || textMessage.includes('well') ||
+			textMessage.includes('yeah') || textMessage.includes('yes')) {
 				
 				var hiOkayAux = hiOkayResponses[Math.floor(Math.random()*hiOkayResponses.length)];
 				message.reply(hiOkayAux);
@@ -211,7 +212,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Saying thank you
-		else if (textMessage.includes('thank')) {
+		else if (textMessage.includes('thank') && continueHowAreYou = false) {
 			
 			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
 			message.reply(thankAux);
