@@ -178,7 +178,7 @@ bot.on('message', async message => {
 		}
 		
 		//Sending an emoji
-		else if (message.content === "❤️") {
+		else if (message.content.includes(':heart:')) {
 			
 			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
 			message.reply(emojiAux);
