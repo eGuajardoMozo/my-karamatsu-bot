@@ -26,6 +26,8 @@ var nightResponses = ["Sleep tight darling, I'll see you tomorrow", "Sweet dream
 var loveResponses = ["And I love you my flower, more than you could ever imagine.", "I love you too my darling, more than anything else in this world.", "I love you the most my angel :heart:", "As do I... I love you so much darling.", "And I love you too my sweet angel. My heart will always be yours."];
 var thankResponses = ["It's absolutely no problem my dear", "You're welcome my flower :rose: !", "It's my pleasure love", "You're more than welcome beautiful", "It's no problem at all my honey"];
 var emojiResponses = [":heart:", ":heart_eyes:", ":kissing_heart:", ":blue_heart:", ":sunglasses: :rose:", ":heartpulse:", ":two_hearts:", ":sparkling_heart:", ":kissing_closed_eyes:"];
+
+var heart = ":heart:";
 }
 	
 bot.on('ready', function (evt) {
@@ -178,7 +180,7 @@ bot.on('message', async message => {
 		}
 		
 		//Sending an emoji
-		else if (message.content.includes(':heart:')) {
+		else if (message.content === heart) {
 			
 			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
 			message.reply(emojiAux);
