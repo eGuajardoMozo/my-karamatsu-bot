@@ -26,6 +26,7 @@ var nightResponses = ["Sleep tight darling, I'll see you tomorrow", "Sweet dream
 var loveResponses = ["And I love you my flower, more than you could ever imagine.", "I love you too my darling, more than anything else in this world.", "I love you the most my angel :heart:", "As do I... I love you so much darling.", "And I love you too my sweet angel. My heart will always be yours."];
 var thankResponses = ["It's absolutely no problem my dear", "You're welcome my flower :rose: !", "It's my pleasure love", "You're more than welcome beautiful", "It's no problem at all my honey"];
 var emojiResponses = [":heart: :heart: :heart:", ":heart_eyes: :heart_eyes: :heart_eyes:", ":kissing_heart: :kissing_heart: :kissing_heart:", ":blue_heart: :blue_heart: :blue_heart:", ":sunglasses: :rose:", ":heartpulse: :heartpulse: :heartpulse:", ":two_hearts: :two_hearts: :two_hearts:", ":sparkling_heart: :sparkling_heart: :sparkling_heart:", ":kissing_closed_eyes: :heart:"];
+var attentionResponses = ["Hm?", "Yes darling?", "What is it love?", "Yes honey?", "Hm? What is it darling?"];
 }
 	
 bot.on('ready', function (evt) {
@@ -63,7 +64,7 @@ bot.on('message', function(message) {
     }
 });
 
-bot.on('message', async message => {
+bot.on("message", (message) => {
 	//so he won't reply to himself
 	if (message.author.bot) return;
 	
@@ -159,6 +160,16 @@ bot.on('message', async message => {
 			var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
 			message.reply(byeAux);
 		}
+		
+		//Getting his attention
+		else if (message.content == "Karamatsu" || message.content == "karamatsu" || message.content == "Kara" ||
+		message.content == "kara" || message.content == "Karamatsu?" || message.content == "karamatsu?" || message.content == "Kara?" ||
+		message.content == "kara?" || message.content == "Karamatsu...?" || message.content == "karamatsu...?" || message.content == "Kara...?" ||
+		message.content == "kara...?") {
+			
+			var attentionAux = attentionResponses[Math.floor(Math.random()*attentionResponses.length)];
+			message.reply(attentionAux);
+		}
 	}
 	
 	//LOVE AND AFFECTION
@@ -177,7 +188,7 @@ bot.on('message', async message => {
 			message.reply(thankAux);
 		}
 		
-		//Sending an emoji
+		//Sending emojis
 		else if (message.content.startsWith("❤") || message.content.startsWith("😍") || message.content.startsWith("😘") ||
 		message.content.startsWith("💙") || message.content.startsWith("💕") || message.content.startsWith("💖") || message.content.startsWith("😚")) {
 			
@@ -185,6 +196,11 @@ bot.on('message', async message => {
 			message.reply(emojiAux);
 			
 		}
+	}
+	
+	//SEXY STUFF
+	{
+		//
 	}
 	
 });
