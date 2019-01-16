@@ -248,7 +248,7 @@ bot.on("message", (message) => {
 	//START SEXY STUFF
 	{
 		//Tell him you're horny
-		if (textMessage.includes('horny') && (textMessage.includes("I'm") || textMessage.includes('I am'))) {
+		if (textMessage.includes('horny')) {
 			
 			var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
 			message.reply(hornyAux);
