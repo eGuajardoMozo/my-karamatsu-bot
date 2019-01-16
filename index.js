@@ -180,7 +180,7 @@ bot.on('message', async message => {
 		}
 		
 		//Sending an emoji
-		else if (message.content == "❤️") {
+		else if (message.content.startsWith(":heart:")) {
 			console.log("im in");
 			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
 			message.reply(emojiAux);
