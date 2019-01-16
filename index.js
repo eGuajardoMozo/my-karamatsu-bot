@@ -146,7 +146,7 @@ bot.on('message', async message => {
 		//Saying hi, hello, hey
 		else if( message.content.includes('hi') || message.content.includes('Hi') || message.content.includes('Hello') || 
 		message.content.includes('hello') || message.content.includes('Hey') || message.content.includes('hey')) {
-			console.log("im in");
+			
 			var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
 			message.reply(hiAux);
 			
@@ -180,7 +180,7 @@ bot.on('message', async message => {
 		}
 		
 		//Sending an emoji
-		else if (message.content == ":heart:") {
+		else if (message.content == "❤️") {
 			console.log("im in");
 			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
 			message.reply(emojiAux);
