@@ -212,7 +212,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Saying thank you
-		else if (textMessage.includes('thank') && continueHowAreYou = false) {
+		else if (textMessage.includes('thank') && continueHowAreYou == false) {
 			
 			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
 			message.reply(thankAux);
