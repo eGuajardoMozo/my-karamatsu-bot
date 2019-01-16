@@ -68,23 +68,23 @@ bot.on("message", (message) => {
 	//so he won't reply to himself
 	if (message.author.bot) return;
 	
+	textMessage = message.content.toLowerCase();
+	
 	//CONTINUED
 	{
 		if(continueMorning == true) {
 			
 			//had a bad night
-			if (message.content.includes('no') || message.content.includes('No')) {
+			if (textMessage.includes('no')) {
 				
 				var badMorningAux = badMorningResponses[Math.floor(Math.random()*badMorningResponses.length)];
 				message.reply(badMorningAux);
 			}
 			
 			//had a good night
-			else if (message.content.includes('great') || message.content.includes('good') || message.content.includes('alright') || 
-			message.content.includes('fine') || message.content.includes('yes') || message.content.includes('yeah') || 
-			message.content.includes('thank') || message.content.includes('Good') || message.content.includes('Alright') || 
-			message.content.includes('Fine') || message.content.includes('Yes') || message.content.includes('Yeah') || 
-			message.content.includes('Thank') || message.content.includes('well') || message.content.includes('Well')){
+			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
+			textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
+			textMessage.includes('thank')){
 				
 				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
 				message.reply(goodMorningAux);
@@ -95,25 +95,21 @@ bot.on("message", (message) => {
 		
 		else if(continueHowAreYou == true) {
 			
-			if (message.content.includes('no') || message.content.includes('No')) {
+			if (textMessage.includes('no')) {
 				
 				var hiBadAux = hiBadResponses[Math.floor(Math.random()*hiBadResponses.length)];
 				message.reply(hiBadAux);
 			}
 			
-			else if (message.content.includes('school') || message.content.includes('work') || message.content.includes('office') ||
-			message.content.includes('class') || message.content.includes('School') || message.content.includes('Work') || 
-			message.content.includes('Office') || message.content.includes('Class')) {
+			else if (textMessage.includes('school') || textMessage.includes('work') || textMessage.includes('office') ||
+			textMessage.includes('class')) {
 				
 				var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
 				message.reply(hiWorkAux);
 			}			
 			
-			else if (message.content.includes('great') || message.content.includes('good') || message.content.includes('alright') || 
-			message.content.includes('fine') || message.content.includes('okay') || 
-			message.content.includes('thank') || message.content.includes('Good') || message.content.includes('Alright') || 
-			message.content.includes('Fine') || message.content.includes('Okay') || 
-			message.content.includes('Thank') || message.content.includes('well') || message.content.includes('Well')) {
+			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
+			textMessage.includes('fine') || textMessage.includes('okay') || textMessage.includes('thank') || textMessage.includes('well')) {
 				
 				var hiOkayAux = hiOkayResponses[Math.floor(Math.random()*hiOkayResponses.length)];
 				message.reply(hiOkayAux);
@@ -126,8 +122,7 @@ bot.on("message", (message) => {
 	//GREETINGS AND GOODBYES	
 	{
 		//Good morning
-		if (message.content.includes('mornin') || message.content.includes('Mornin') || message.content.includes('good morning') || 
-		message.content.includes('Good morning')) {
+		if (textMessage.includes('mornin') || textMessage.includes('good morning')) {
 			
 			var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
 			message.reply(morningAux);
@@ -136,15 +131,14 @@ bot.on("message", (message) => {
 		}
 		
 		//Good night
-		else if (message.content.includes('good night') || message.content.includes('Good night')) {
+		else if (textMessage.includes('good night')) {
 			
 			var nightAux = nightResponses[Math.floor(Math.random()*nightResponses.length)];
 			message.reply(nightAux);
 		}
 		
 		//Saying hi, hello, hey
-		else if( message.content.includes('hi') || message.content.includes('Hi') || message.content.includes('Hello') || 
-		message.content.includes('hello') || message.content.includes('Hey') || message.content.includes('hey')) {
+		else if (textMessage.includes('hi') || textMessage.includes('hello') || textMessage.includes('hey')) {
 			
 			var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
 			message.reply(hiAux);
@@ -154,18 +148,15 @@ bot.on("message", (message) => {
 		}
 		
 		//Saying goodbye
-		else if (message.content.includes('bye') || message.content.includes('Bye') || message.content.includes('to go') || 
-		message.content.includes('gotta go') || message.content.includes('Gotta go')) {
+		else if (textMessage.includes('bye') || textMessage.includes('to go') || textMessage.includes('gotta go')) {
 			
 			var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
 			message.reply(byeAux);
 		}
 		
 		//Getting his attention
-		else if (message.content == "Karamatsu" || message.content == "karamatsu" || message.content == "Kara" ||
-		message.content == "kara" || message.content == "Karamatsu?" || message.content == "karamatsu?" || message.content == "Kara?" ||
-		message.content == "kara?" || message.content == "Karamatsu...?" || message.content == "karamatsu...?" || message.content == "Kara...?" ||
-		message.content == "kara...?") {
+		else if (textMessage == "karamatsu" || textMessage == "kara" || textMessage == "karamatsu?" ||
+		textMessage == "kara?" || textMessage == "karamatsu...?" || textMessage == "kara...?") {
 			
 			var attentionAux = attentionResponses[Math.floor(Math.random()*attentionResponses.length)];
 			message.reply(attentionAux);
@@ -175,14 +166,14 @@ bot.on("message", (message) => {
 	//LOVE AND AFFECTION
 	{
 		//Saying I love you
-		if (message.content.includes('love you')) {
+		if (textMessage.includes('love you')) {
 			
 			var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
 			message.reply(loveAux);
 		}
 		
 		//Saying thank you
-		else if (message.content.includes('thank') || message.content.includes('Thank')) {
+		else if (textMessage.includes('thank')) {
 			
 			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
 			message.reply(thankAux);
