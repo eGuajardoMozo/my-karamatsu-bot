@@ -3,6 +3,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 var continueMorning = false;
 var continueHowAreYou = false;
+var continueHorny = false;
 
 //KARA'S ANSWERS
 {
@@ -34,6 +35,9 @@ var continueHowAreYou = false;
 	var shyComplimentResponses = ["E-Ehh??", ":flushed:", "M-Me??", "I-Is that what you think? :flushed:", "Eh?? R-Really?"];
 	var shyComplimentNextResponse = ["Well... I think you are much more than I am", "I personally would have used another word like handsome or cool... but thank you darling.", "Personally I would have gone for *incredibly* handsome, but... thank you so much darling.", "I-I think you got this backwards my honey", "Well I -ahem- usually don't go by that, but I'm glad you think so..."]
 	var sexyComplimentResponses = ["***Heh***. Thank you for noticing my darling!", "I sure am aren't I? :sunglasses: And it's only to be expected that I have an equally gorgeous and amazing girlfriend", "How kind of you to point it out darling! You have such good taste don't you? :heart:", "Right? It's a wonder how such a sinful and guilty man as myself was bestowed this much power.", "Why thank you my love! I know that this sinful body of mine could captivate every single heart on earth, but I'll always devote myself to you only."];
+	
+	//Sexy stuff
+	var hornyResponses = ["Oh my... is that so? :smirk:", "Oh? Does my Karamatsu Girl need to be taken care of?", "Always so forward my darling... and I'm always happy to be of assistance.", "Oh my, then if you allow me... I'll gladly fuel the fire of passion within you.", "Then please... let me take care of you..."];
 }
 	
 bot.on('ready', function (evt) {
@@ -124,6 +128,26 @@ bot.on("message", (message) => {
 			
 			continueHowAreYou = false;
 		}
+		/*
+		else if(continueHorny == true) {
+			
+			if (textMessage.includes('touch')) {
+				
+				
+			}
+			
+			else if (textMessage.includes('eat') || textMessage.includes('pussy') || textMessage.includes('lick')) {
+			
+				
+			}
+			
+			else if (textMessage.includes('fuck') || textMessage.includes('inside') || textMessage.includes('cock') ||
+			textMessage.includes('dick') || textMessage.includes('take') || textMessage.includes('yours')) {
+				
+				
+			}
+			continueHorny = false;
+		}*/
 	}
 
 	//GREETINGS AND TALKING	
@@ -221,9 +245,17 @@ bot.on("message", (message) => {
 		}
 	}
 	
-	//SEXY STUFF
+	//START SEXY STUFF
 	{
-		//
+		//Tell him you're horny
+		if (textMessage.includes('horny') && (textMessage.includes("I'm") || textMessage.includes('I am'))) {
+			
+			var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
+			message.reply(hornyAux);
+			message.reply("What would you want me to do to you darling?");
+			message.reply("Touch every single inch of your body? Feast on your sweet nectar? Or perhaps take you and make you mine?");
+			continueHorny = true;
+		}
 	}
 	
 });
