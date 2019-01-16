@@ -153,7 +153,7 @@ bot.on("message", (message) => {
 	//GREETINGS AND TALKING	
 	{
 		//Good morning
-		if (textMessage.includes('mornin') || textMessage.includes('good morning')) {
+		if (textMessage.includes('good morning')) {
 			
 			var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
 			message.reply(morningAux);
@@ -169,7 +169,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Saying hi, hello, hey
-		else if (textMessage.includes('hi') || textMessage.includes('hello') || textMessage.includes('hey')) {
+		else if (textMessage.startsWith('hi') || textMessage.startsWith('hello') || textMessage.startsWith('hey')) {
 			
 			var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
 			message.reply(hiAux);
@@ -179,7 +179,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Saying goodbye
-		else if (textMessage.includes('bye') || textMessage.includes('to go') || textMessage.includes('gotta go')) {
+		else if (textMessage.includes('bye') || textMessage.includes('see ya') || textMessage.includes('see you')) {
 			
 			var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
 			message.reply(byeAux);
