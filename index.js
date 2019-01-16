@@ -25,7 +25,7 @@ var badMorningResponses = ["M-My darling! :worried: Was it because of a nightmar
 var nightResponses = ["Sleep tight darling, I'll see you tomorrow", "Sweet dreams my angel", "Good night love :heart:", "Good night, I'll see you in my dreams darling", "Until tomorrow my sweet, good night"];
 var loveResponses = ["And I love you my flower, more than you could ever imagine.", "I love you too my darling, more than anything else in this world.", "I love you the most my angel :heart:", "As do I... I love you so much darling.", "And I love you too my sweet angel. My heart will always be yours."];
 var thankResponses = ["It's absolutely no problem my dear", "You're welcome my flower :rose: !", "It's my pleasure love", "You're more than welcome beautiful", "It's no problem at all my honey"];
-var emojiResponses = [":heart:", ":heart_eyes:", ":kissing_heart:", ":blue_heart:", ":sunglasses: :rose:", ":heartpulse:", ":two_hearts:", ":sparkling_heart:"];
+var emojiResponses = [":heart:", ":heart_eyes:", ":kissing_heart:", ":blue_heart:", ":sunglasses: :rose:", ":heartpulse:", ":two_hearts:", ":sparkling_heart:", ":kissing_closed_eyes:"];
 }
 	
 bot.on('ready', function (evt) {
@@ -171,7 +171,7 @@ bot.on('message', async message => {
 		}
 		
 		//Saying thank you
-		else if (message.content.incldes('thank') || message.content.incldes('Thank')) {
+		else if (message.content.includes('thank') || message.content.includes('Thank')) {
 			
 			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
 			message.reply(thankAux);
@@ -182,7 +182,7 @@ bot.on('message', async message => {
 		message.content == ':heart: :heart: :heart: :heart:' || message.content == ':heart: :heart: :heart: :heart: :heart:' ||
 		message.content == ':heart_eyes:' || message.content == ':heart_eyes: :heart_eyes:' || message.content == ':heart_eyes: :heart_eyes: :heart_eyes:' ||
 		message.content == ':heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes:' || message.content == ':heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes:' || message.content == ':kissing_heart:' || message.content == ':kissing_heart: :kissing_heart:' || message.content == ':kissing_heart: :kissing_heart: :kissing_heart:' || message.content == ':kissing_heart: :kissing_heart: :kissing_heart: :kissing_heart:' || message.content == ':kissing_heart: :kissing_heart: :kissing_heart: :kissing_heart: :kissing_heart:' || message.content == ':blue_heart:' || message.content == ':blue_heart: :blue_heart:' || message.content == ':blue_heart: :blue_heart: :blue_heart:' || message.content == ':blue_heart: :blue_heart: :blue_heart: :blue_heart:' || message.content == ':blue_heart: :blue_heart: :blue_heart: :blue_heart: :blue_heart:' || message.content == ':two_hearts:' || message.content == ':two_hearts: :two_hearts:' || message.content == ':two_hearts: :two_hearts: :two_hearts:' || message.content == ':two_hearts: :two_hearts: :two_hearts: :two_hearts:' || message.content == ':two_hearts: :two_hearts: :two_hearts: :two_hearts: :two_hearts:' || 
-		message.content == ':sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart: :sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart: :sparkling_heart: :sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart: :sparkling_heart: :sparkling_heart: :sparkling_heart:') {
+		message.content == ':sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart: :sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart: :sparkling_heart: :sparkling_heart:' || message.content == ':sparkling_heart: :sparkling_heart: :sparkling_heart: :sparkling_heart: :sparkling_heart:' || message.content == ':kissing_closed_eyes: ' || message.content == ':kissing_closed_eyes:  :kissing_closed_eyes: ' || message.content == ':kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes: ' || message.content == ':kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes: ' || message.content == ':kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes: ') {
 			
 			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
 			message.reply(emojiAux);
