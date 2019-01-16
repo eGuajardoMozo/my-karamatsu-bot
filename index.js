@@ -27,6 +27,10 @@ var loveResponses = ["And I love you my flower, more than you could ever imagine
 var thankResponses = ["It's absolutely no problem my dear", "You're welcome my flower :rose: !", "It's my pleasure love", "You're more than welcome beautiful", "It's no problem at all my honey"];
 var emojiResponses = [":heart: :heart: :heart:", ":heart_eyes: :heart_eyes: :heart_eyes:", ":kissing_heart: :kissing_heart: :kissing_heart:", ":blue_heart: :blue_heart: :blue_heart:", ":sunglasses: :rose:", ":heartpulse: :heartpulse: :heartpulse:", ":two_hearts: :two_hearts: :two_hearts:", ":sparkling_heart: :sparkling_heart: :sparkling_heart:", ":kissing_closed_eyes: :heart:"];
 var attentionResponses = ["Hm?", "Yes darling?", "What is it love?", "Yes honey?", "Hm? What is it darling?"];
+
+var shyComplimentResponses = ["E-Ehh??", ":flushed:", "M-Me??", "I-Is that what you think? :flushed:", "Eh?? R-Really?"];
+var shyComplimentNextResponse = ["Well... I think you are much more than I am", "I personally would have used another word like handsome or cool... but thank you darling.", "Personally I would have gone for *incredibly* handsome, but... thank you so much darling.", "I-I think you got this backwards my honey", "Well I -ahem- usually don't go by that, but I'm glad you think so..."]
+var sexyComplimentResponses = ["***Heh***. Thank you for noticing my darling!", "I sure am aren't I? :sunglasses: And it's only to be expected that I have an equally gorgeous and amazing girlfriend", "How kind of you to point it out darling! You have such good taste don't you? :heart:", "Right? It's a wonder how such a sinful and guilty man as myself was bestowed this much power.", "Why thank you my love! I know that this sinful body of mine could captivate every single heart on earth, but I'll always devote myself to you only."];
 }
 	
 bot.on('ready', function (evt) {
@@ -84,7 +88,7 @@ bot.on("message", (message) => {
 			//had a good night
 			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
 			textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
-			textMessage.includes('thank')){
+			textMessage.includes('thank')) || textMessage.includes('sure')){
 				
 				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
 				message.reply(goodMorningAux);
@@ -186,6 +190,24 @@ bot.on("message", (message) => {
 			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
 			message.reply(emojiAux);
 			
+		}
+		
+		//Calling him cute
+		else if (textMessage.includes('you') && (textMessage.includes('cute') || textMessage.includes('cutie') || textMessage.includes('adorable'))) {
+			
+			var shyAux = shyComplimentResponses[Math.floor(Math.random()*shyComplimentResponses.length)];
+			message.reply(shyAux);
+			var shyNextAux = shyComplimentNextResponse[Math.floor(Math.random()*shyComplimentNextResponse.length)];
+			message.reply(shyNextAux);
+		}
+		
+		//Calling handsome
+		else if (textMessage.includes('you') && (textMessage.includes('handsome') || textMessage.includes('good looking') || 
+		textMessage.includes('dashing') || textMessage.includes('hot') || textMessage.includes('sexy') || textMessage.includes('attractive') ||
+		textMessage.includes('cool'))) {
+			
+			var sexyAux = sexyComplimentResponses[Math.floor(Math.random()*sexyComplimentResponses.length)];
+			message.reply(sexyAux);
 		}
 	}
 	
