@@ -25,7 +25,7 @@ var badMorningResponses = ["M-My darling! :worried: Was it because of a nightmar
 var nightResponses = ["Sleep tight darling, I'll see you tomorrow", "Sweet dreams my angel", "Good night love :heart:", "Good night, I'll see you in my dreams darling", "Until tomorrow my sweet, good night"];
 var loveResponses = ["And I love you my flower, more than you could ever imagine.", "I love you too my darling, more than anything else in this world.", "I love you the most my angel :heart:", "As do I... I love you so much darling.", "And I love you too my sweet angel. My heart will always be yours."];
 var thankResponses = ["It's absolutely no problem my dear", "You're welcome my flower :rose: !", "It's my pleasure love", "You're more than welcome beautiful", "It's no problem at all my honey"];
-var emojiResponses = [":heart:", ":heart_eyes:", ":kissing_heart:", ":blue_heart:", ":sunglasses: :rose:", ":heartpulse:", ":two_hearts:", ":sparkling_heart:", ":kissing_closed_eyes:"];
+var emojiResponses = [":heart: :heart: :heart:", ":heart_eyes: :heart_eyes: :heart_eyes:", ":kissing_heart: :kissing_heart: :kissing_heart:", ":blue_heart: :blue_heart: :blue_heart:", ":sunglasses: :rose:", ":heartpulse: :heartpulse: :heartpulse:", ":two_hearts: :two_hearts: :two_hearts:", ":sparkling_heart: :sparkling_heart: :sparkling_heart:", ":kissing_closed_eyes: :heart:"];
 
 var heart = ":heart:";
 }
@@ -180,8 +180,9 @@ bot.on('message', async message => {
 		}
 		
 		//Sending an emoji
-		else if (message.content.startsWith("❤")) {
-			console.log("im in");
+		else if (message.content.startsWith("❤") || message.content.startsWith("😍") || message.content.startsWith("😘") ||
+		message.content.startsWith("💙") || message.content.startsWith("💕") || message.content.startsWith("💖") || message.content.startsWith("😚")) {
+			
 			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
 			message.reply(emojiAux);
 			
