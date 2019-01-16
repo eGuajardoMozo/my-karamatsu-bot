@@ -217,7 +217,7 @@ bot.on("message", (message) => {
 			message.reply(thankAux);
 		}
 		
-		//Sending him emojis
+		//Sending emojis
 		else if (message.content.startsWith("❤") || message.content.startsWith("😍") || message.content.startsWith("😘") ||
 		message.content.startsWith("💙") || message.content.startsWith("💕") || message.content.startsWith("💖") || message.content.startsWith("😚")) {
 			
