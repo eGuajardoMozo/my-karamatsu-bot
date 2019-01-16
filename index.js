@@ -88,7 +88,7 @@ bot.on("message", (message) => {
 			//had a good night
 			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
 			textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
-			textMessage.includes('thank')) || textMessage.includes('sure')){
+			textMessage.includes('thank') || textMessage.includes('sure')){
 				
 				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
 				message.reply(goodMorningAux);
