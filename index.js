@@ -3,6 +3,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 var continueMorning = false;
 var continueHowAreYou = false;
+var answeredAboutDay = false;
 var continueHorny = false;
 
 //KARA'S ANSWERS
@@ -80,6 +81,7 @@ bot.on("message", (message) => {
 	if (message.author.bot) return;
 	
 	textMessage = message.content.toLowerCase();
+	answeredAboutDay = false;
 	
 	//CONTINUED
 	{
@@ -99,6 +101,7 @@ bot.on("message", (message) => {
 				
 				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
 				message.reply(goodMorningAux);
+				answeredAboutDay = true;
 			}
 			
 			continueMorning = false;
@@ -125,6 +128,7 @@ bot.on("message", (message) => {
 				
 				var hiOkayAux = hiOkayResponses[Math.floor(Math.random()*hiOkayResponses.length)];
 				message.reply(hiOkayAux);
+				answeredAboutDay = true;
 			}
 			
 			continueHowAreYou = false;
@@ -212,7 +216,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Saying thank you
-		else if (textMessage.includes('thank') && continueHowAreYou == false) {
+		else if (textMessage.includes('thank') && answeredAboutDay == false) {
 			
 			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
 			message.reply(thankAux);
