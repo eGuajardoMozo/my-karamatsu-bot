@@ -93,7 +93,7 @@ bot.on("message", (message) => {
 		if(continueMorning == true) {
 			
 			//had a bad night
-			if (textMessage.includes('no')) {
+			if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
 				
 				var badMorningAux = badMorningResponses[Math.floor(Math.random()*badMorningResponses.length)];
 				message.reply(badMorningAux);
