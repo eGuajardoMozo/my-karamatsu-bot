@@ -36,9 +36,13 @@ var continueHorny = false;
 	var shyComplimentResponses = ["E-Ehh??", ":flushed:", "M-Me??", "I-Is that what you think? :flushed:", "Eh?? R-Really?"];
 	var shyComplimentNextResponse = ["Well... I think you are much more than I am", "I personally would have used another word like handsome or cool... but thank you darling.", "Personally I would have gone for *incredibly* handsome, but... thank you so much darling.", "I-I think you got this backwards my honey", "Well I -ahem- usually don't go by that, but I'm glad you think so..."]
 	var sexyComplimentResponses = ["***Heh***. Thank you for noticing my darling!", "I sure am aren't I? :sunglasses: And it's only to be expected that I have an equally gorgeous and amazing girlfriend", "How kind of you to point it out darling! You have such good taste don't you? :heart:", "Right? It's a wonder how such a sinful and guilty man as myself was bestowed this much power.", "Why thank you my love! I know that this sinful body of mine could captivate every single heart on earth, but I'll always devote myself to you only."];
+	var marryResponses = ["If there's anything I want in this world is to make you my wife darling. Mrs. Matsuno... doesn't it sound perfect?", "You know what I want more than anything is to finally be united as husband and wife my love. To live the rest of our lives together, just like were meant to be.", "Trust me my angel, one day I'll finally be able to call you my wife. And when that day comes I'll proudly announce it to the rest of the world, so they too know how much we love each other.", "I too yearn for the day we become husband and wife my love, so much that it has come to my dreams more times than I can count. We'll spend the rest of our lives together, and our love will only grow stronger.", "Someday we'll finally get married my love, don't worry. And we'll live happily ever after, spending every single day together just like we were meant to be. And maybe... start a family of our own."];
+	var hugResponses = ["If I could I'd hold you in my arms all day :heart:", "Holding you tight against me is always so warm and comforting. It feels like home.", "There's no other place I'd rather have you right now than in my arms...", "Whenever I embrace you it feels like I'm soaring among the clouds... It must be because you're an angel.", "The only thing I've grown to dislike of holding you is when we have to pull apart... if only we could stay like that forever."];
+	var kissResponses = ["A kiss from an angel... am I dreaming?", "To kiss those soft and sweet lips, if only for a second... I couldn't ask for anything else.", "To think I'm the only one that can kiss those perfect lips... did I do something good in a past life to reward me so much in this one?", "A glimpse of paradise. That's what your lips taste like.", "The touch of those lips is enough to leave me without words. So please... leave me breathless."];
 	
 	//Sexy stuff
 	var hornyResponses = ["Oh my... is that so? :smirk:", "Oh? Does my Karamatsu Girl need to be taken care of?", "Always so forward my darling... and I'm always happy to be of assistance.", "Oh my, then if you allow me... I'll gladly fuel the fire of passion within you.", "Then please... let me take care of you..."];
+	var daddyResponses = ["Have you been a good girl? :smirk:", "Make sure to be a good girl. Daddy wouldn't want to punish you.", "Remember that if you behave Daddy will reward you, so keep that in mind alright beautiful?", "Daddy knows you can be a naughty girl, so be sure to be have alright?", "Daddy loves you very much, so don't give him a reason to punish you."];
 }
 	
 bot.on('ready', function (evt) {
@@ -80,7 +84,8 @@ bot.on("message", (message) => {
 	//so he won't reply to himself
 	if (message.author.bot) return;
 	
-	textMessage = message.content.toLowerCase();
+	words = message.content.toLowerCase();
+	const textMessage = words.split(' ');
 	answeredAboutDay = false;
 	
 	//CONTINUED
@@ -158,7 +163,7 @@ bot.on("message", (message) => {
 	//GREETINGS AND TALKING	
 	{
 		//Good morning
-		if (textMessage.includes('good morning')) {
+		else if (textMessage.includes('good morning')) {
 			
 			var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
 			message.reply(morningAux);
@@ -184,7 +189,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Saying goodbye
-		else if (textMessage.includes('bye') || textMessage.includes('see ya') || textMessage.includes('see you')) {
+		else if (textMessage.includes('bye') || textMessage.includes('see ya') || textMessage.includes('see you') || textMessage.includes('goodbye')) {
 			
 			var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
 			message.reply(byeAux);
@@ -199,7 +204,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Asking how he's doing
-		else if (textMessage.includes('how') && textMessage.includes('you') && (textMessage.includes('are') || textMessage.includes('doin'))) {
+		else if (textMessage.includes('how') && textMessage.includes('you') && (textMessage.includes('are') || textMessage.includes('doing'))) {
 		
 			var howDoingAux = howAreYouResponses[Math.floor(Math.random()*howAreYouResponses.length)];
 			message.reply(howDoingAux);
@@ -209,14 +214,14 @@ bot.on("message", (message) => {
 	//LOVE AND AFFECTION
 	{
 		//Saying I love you
-		if (textMessage.includes('love you')) {
+		else if (textMessage.includes('love you')) {
 			
 			var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
 			message.reply(loveAux);
 		}
 		
 		//Saying thank you
-		else if (textMessage.includes('thank') && answeredAboutDay == false) {
+		else if (words.includes('thank') && answeredAboutDay == false) {
 			
 			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
 			message.reply(thankAux);
@@ -241,25 +246,54 @@ bot.on("message", (message) => {
 		}
 		
 		//Calling him handsome
-		else if (textMessage.includes('you') && (textMessage.includes('handsome') || textMessage.includes('good looking') || 
+		else if (words.includes('you') && (textMessage.includes('handsome') || textMessage.includes('good looking') || 
 		textMessage.includes('dashing') || textMessage.includes('hot') || textMessage.includes('sexy') || textMessage.includes('attractive') ||
 		textMessage.includes('cool'))) {
 			
 			var sexyAux = sexyComplimentResponses[Math.floor(Math.random()*sexyComplimentResponses.length)];
 			message.reply(sexyAux);
 		}
+		
+		//Asking about marriage
+		else if (textMessage.includes('marry') || textMessage.includes('married') && (textMessage.includes('us') || textMessage.includes('you') || 
+		textMessage.includes('me'))) {
+			
+			var marryAux = marryResponses[Math.floor(Math.random()*marryResponses.length)];
+			message.reply(marryAux);
+		}
+		
+		//Asking for a hug
+		else if(textMessage.includes('hug')) {
+		
+			var hugAux = hugResponses[Math.floor(Math.random()*hugResponses.length)];
+			message.reply(hugAux);
+		}
+		
+		//Asking for a kiss
+		else if (textMessage.includes('kiss')) {
+			
+			var kissAux = kissResponses[Math.floor(Math.random()*kissResponses.length)];
+			message.reply(kissAux);
+		}
 	}
 	
-	//START SEXY STUFF
+	//SEXY STUFF
 	{
 		//Tell him you're horny
-		if (textMessage.includes('horny')) {
+		else if (textMessage.includes('horny')) {
 			
 			var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
 			message.reply(hornyAux);
 			message.reply("What would you want me to do to you darling?");
 			message.reply("Touch every single inch of your body? Feast on your sweet nectar? Or perhaps take you and make you mine?");
 			continueHorny = true;
+		}
+		
+		//Call him daddy
+		else if(textMessage.includes ('daddy')) {
+		
+			var daddyAux = daddyResponses[Math.floor(Math.random()*daddyResponses.length)];
+			message.reply(daddyAux);
 		}
 	}
 	
