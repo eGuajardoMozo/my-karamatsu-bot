@@ -159,8 +159,8 @@ bot.on("message", (message) => {
 				
 				
 			}
-			continueHorny = false;
-		}*/
+			continueHorny = false;*/
+		}
 	
 	//SEXY STUFF
 	
@@ -207,7 +207,6 @@ bot.on("message", (message) => {
 			message.reply(hiAux);
 			
 			continueHowAreYou = true;
-			
 		}
 		
 		//Saying goodbye
@@ -296,6 +295,7 @@ bot.on("message", (message) => {
 			var kissAux = kissResponses[Math.floor(Math.random()*kissResponses.length)];
 			message.reply(kissAux);
 		}
+	
 });
 
 bot.login(process.env.token);
