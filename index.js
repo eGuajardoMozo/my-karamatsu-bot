@@ -163,7 +163,7 @@ bot.on("message", (message) => {
 	//GREETINGS AND TALKING	
 	{
 		//Good morning
-		else if (textMessage.includes('good morning')) {
+		if (textMessage.includes('good morning')) {
 			
 			var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
 			message.reply(morningAux);
@@ -214,7 +214,7 @@ bot.on("message", (message) => {
 	//LOVE AND AFFECTION
 	{
 		//Saying I love you
-		else if (textMessage.includes('love you')) {
+		if (textMessage.includes('love you')) {
 			
 			var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
 			message.reply(loveAux);
@@ -280,7 +280,7 @@ bot.on("message", (message) => {
 	//SEXY STUFF
 	{
 		//Tell him you're horny
-		else if (textMessage.includes('horny')) {
+		if (textMessage.includes('horny')) {
 			
 			var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
 			message.reply(hornyAux);
