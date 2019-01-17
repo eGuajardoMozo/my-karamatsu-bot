@@ -89,7 +89,7 @@ bot.on("message", (message) => {
 	answeredAboutDay = false;
 	
 	//CONTINUED
-	{
+	
 		if(continueMorning == true) {
 			
 			//had a bad night
@@ -158,12 +158,31 @@ bot.on("message", (message) => {
 			}
 			continueHorny = false;
 		}*/
-	}
-
+	
+	//SEXY STUFF
+	
+		//Tell him you're horny
+		else if (textMessage.includes('horny')) {
+			
+			var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
+			message.reply(hornyAux);
+			message.reply("What would you want me to do to you darling?");
+			message.reply("Touch every single inch of your body? Feast on your sweet nectar? Or perhaps take you and make you mine?");
+			continueHorny = true;
+		}
+		
+		//Call him daddy
+		else if(textMessage.includes ('daddy')) {
+		
+			var daddyAux = daddyResponses[Math.floor(Math.random()*daddyResponses.length)];
+			message.reply(daddyAux);
+		}
+		
+		
 	//GREETINGS AND TALKING	
-	{
+	
 		//Good morning
-		if (textMessage.includes('good morning')) {
+		else if (textMessage.includes('good morning')) {
 			
 			var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
 			message.reply(morningAux);
@@ -209,12 +228,12 @@ bot.on("message", (message) => {
 			var howDoingAux = howAreYouResponses[Math.floor(Math.random()*howAreYouResponses.length)];
 			message.reply(howDoingAux);
 		}
-	}
+	
 	
 	//LOVE AND AFFECTION
-	{
+	
 		//Saying I love you
-		if (textMessage.includes('love you')) {
+		else if (textMessage.includes('love you')) {
 			
 			var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
 			message.reply(loveAux);
@@ -263,7 +282,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Asking for a hug
-		else if(splitTextMessage.includes('hug ')) {
+		else if(textMessage.includes('hug ')) {
 		
 			var hugAux = hugResponses[Math.floor(Math.random()*hugResponses.length)];
 			message.reply(hugAux);
@@ -275,28 +294,6 @@ bot.on("message", (message) => {
 			var kissAux = kissResponses[Math.floor(Math.random()*kissResponses.length)];
 			message.reply(kissAux);
 		}
-	}
-	
-	//SEXY STUFF
-	{
-		//Tell him you're horny
-		if (textMessage.includes('horny')) {
-			
-			var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
-			message.reply(hornyAux);
-			message.reply("What would you want me to do to you darling?");
-			message.reply("Touch every single inch of your body? Feast on your sweet nectar? Or perhaps take you and make you mine?");
-			continueHorny = true;
-		}
-		
-		//Call him daddy
-		else if(textMessage.includes ('daddy')) {
-		
-			var daddyAux = daddyResponses[Math.floor(Math.random()*daddyResponses.length)];
-			message.reply(daddyAux);
-		}
-	}
-	
 });
 
 bot.login(process.env.token);
