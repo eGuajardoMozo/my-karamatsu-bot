@@ -84,8 +84,8 @@ bot.on("message", (message) => {
 	//so he won't reply to himself
 	if (message.author.bot) return;
 	
-	words = message.content.toLowerCase();
-	const textMessage = words.split(' ');
+	textMessage = message.content.toLowerCase();
+	const splitTextMessage = textMessage.split(' ');
 	answeredAboutDay = false;
 	
 	//CONTINUED
@@ -221,7 +221,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Saying thank you
-		else if (words.includes('thank') && answeredAboutDay == false) {
+		else if (textMessage.includes('thank') && answeredAboutDay == false) {
 			
 			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
 			message.reply(thankAux);
@@ -246,7 +246,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Calling him handsome
-		else if (words.includes('you') && (textMessage.includes('handsome') || textMessage.includes('good looking') || 
+		else if (textMessage.includes('you') && (textMessage.includes('handsome') || textMessage.includes('good looking') || 
 		textMessage.includes('dashing') || textMessage.includes('hot') || textMessage.includes('sexy') || textMessage.includes('attractive') ||
 		textMessage.includes('cool'))) {
 			
@@ -255,15 +255,15 @@ bot.on("message", (message) => {
 		}
 		
 		//Asking about marriage
-		else if (textMessage.includes('marry') || textMessage.includes('married') && (textMessage.includes('us') || textMessage.includes('you') || 
-		textMessage.includes('me'))) {
+		else if (textMessage.includes('marry') || textMessage.includes('married') && (splitTextMessage.includes('us') || textMessage.includes('you') || 
+		splitTextMessage.includes('me'))) {
 			
 			var marryAux = marryResponses[Math.floor(Math.random()*marryResponses.length)];
 			message.reply(marryAux);
 		}
 		
 		//Asking for a hug
-		else if(textMessage.includes('hug')) {
+		else if(splitTextMessage.includes('hug')) {
 		
 			var hugAux = hugResponses[Math.floor(Math.random()*hugResponses.length)];
 			message.reply(hugAux);
