@@ -114,7 +114,7 @@ bot.on("message", (message) => {
 		
 		else if(continueHowAreYou == true) {
 			
-			if (textMessage.includes('no')) {
+			if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
 				
 				var hiBadAux = hiBadResponses[Math.floor(Math.random()*hiBadResponses.length)];
 				message.reply(hiBadAux);
@@ -263,7 +263,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Asking for a hug
-		else if(splitTextMessage.includes('hug')) {
+		else if(splitTextMessage.includes('hug ')) {
 		
 			var hugAux = hugResponses[Math.floor(Math.random()*hugResponses.length)];
 			message.reply(hugAux);
