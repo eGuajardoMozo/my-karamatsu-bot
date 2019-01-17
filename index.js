@@ -159,6 +159,11 @@ bot.on("message", (message) => {
 				
 				
 			}
+			
+			else if (textMessage.includes('three') || textMessage.includes('all') || textMessage.includes('everything')) {
+				
+				
+			}
 			continueHorny = false;*/
 		}
 	
