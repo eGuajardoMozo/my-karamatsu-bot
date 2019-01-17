@@ -299,6 +299,7 @@ bot.on("message", (message) => {
 			
 			var kissAux = kissResponses[Math.floor(Math.random()*kissResponses.length)];
 			message.reply(kissAux);
+			message.reply(":kiss:");
 		}
 	
 });
