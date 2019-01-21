@@ -11,7 +11,7 @@ var continueHorny = false;
 	//Randomly sent by Kara
 	var randomKaraLoveTexts = ["I saw the stars last night and started thinking of you darling. Always glistening so brightly I can't help but smile, but of course the stars could never compare to your beauty. It brings a song to my heart. Today I think I'll go to the roof and write it down so I can sing it to you someday.", "Darling can I just say that you're absolutely amazing? So beautiful and smart, a bright mind and pure heart filled with so much love to share. Sometimes I can't believe how incredibly lucky I was to meet you.", "Today I filled so many pages of poems dedicated to you my flower. It's funny, ever since I met you I've been needing to buy notebooks more often, and the more pages I fill the more my heart swells with all this love I want to convey to you. It feels wonderful.", "I keep having dreams of a future together darling. Every single time I see us happily living together, spending each day by each other's side, and having a family of our own. The day our love takes shape into a brand new life I'll probably think I'm dreaming again. But even in a dream as long as it's with you, I'll be happy.", "Heh, don't mind me love, I just wanted to briefly remind you how much I've hopelessly fallen in love with you. Because I have, and every word that leaves your lips, every single touch of your hand against mine, and every smile directed just to me makes me want to soar and lose myself in this wonderful feeling. You make me the happiest man in the world."];
 	var randomKaraTalk = ["*sigh* sometimes I wish I was bird, with wings to fly wherever you were and be with you always. But then again, if I was a bird I wouldn't be able to kiss you. Perhaps there are birds that wished they were me, just so they could kiss you.", "While I was out today on the roof my sweet Jyushimatsu gave me some company and we sang until the sun set. We make a magnificent duet, but I wish I could sing with my other brothers as well. Surprisingly we were all blessed with good voices (some better than others :sunglasses:). One day I'll get all six of us to sing together.", "Last night we had some absolutely fantastic Gyudon for dinner! Courtesy of my very talented mother. You should come have dinner with us all one day darling, I'm sure you'd have a wonderful time.", "We went to visit our dear friend Chibita yesterday and as we always do we merrily drank the night away. Fear not darling, for even amidst the hazy stupor of alcohol I remain alert, and because our useless older brother passed out I took charge like the responsible older brother I am and safely brought all my brothers home! You should have seen it, I was so cool even Ichimatsu wouldn't deny it :sunglasses: It's a shame they don't remember anything.", "Ah darling I just woke up from the best nap I've had in days. None of my brothers woke me up abruptly and I feel absolutely fantastic! Heh, it's probably related to the fact that you were in my dreams :sparkles:"];
-	var randomBrotherTalk = ["Wouldn't you believe it darling? We just caught Osomatsu hiding from us some big pachinko winnings. But don't worry, we kindly reminded him the importance of being generous with his younger brothers.", "I saw Choromatsu reading one of his light novels behind a job magazine again. I don't know why he feels the need to hide his hobbies, I'm sure if he shared them it'd bring us closer to him!", "Recently I was accompanying Jyushimatsu to the park and saw Ichimatsu talking with some cats in an alley. It always amazes me how gentle and kind he is with them all, feeding them and patting them so amicably. My little brother sure is a very loving person isn't he?", "Ah, we got some mail today and my sweet Jyushimatsu was incredibly excited. It warms my heart to know he stays in contact with the sweet girl that captured his heart. Hopefully she'll be able to visit him soon.", "It was very cold the other night and Todomatsu cuddled up to me! Of course he was asleep and didn't notice, but darling I couldn't keep the smile off my face. I wish I could have taken a picture."];
+	var randomBrotherTalk = ["Wouldn't you believe it darling? We just caught Osomatsu hiding from us some big pachinko winnings. But don't worry, we kindly reminded him the importance of being generous with his younger brothers.", "I saw Choromatsu reading one of his light novels behind a job magazine again. I don't know why he feels the need to hide his hobbies, I'm sure if he shared them it'd bring us closer to him!", "Recently I was accompanying Jyushimatsu to the park and saw Ichimatsu talking with some cats in an alley. It always amazes me how gentle and kind he is with them all, feeding them and patting them so amicably. My little brother sure is a very loving person isn't he?", "Ah, we got some mail today and my sweet Jyushimatsu was incredibly excited. It warms my heart to know he stays in contact with the sweet maiden that captured his heart. Hopefully she'll be able to visit him soon.", "It was very cold the other night and Todomatsu cuddled up to me! Of course he was asleep and didn't notice, but darling I couldn't keep the smile off my face. I wish I could have taken a picture."];
 	var randomTimes = [216000000, 18000000, 14400000 ]; //in 6, 5 or 4 hours
 
 	//Continued
@@ -20,7 +20,8 @@ var continueHorny = false;
 	var hiBadResponses = ["Don't worry my love! I'll cheer for you! You know I'll always be here as your support :heart:", "Darling... don't worry, I'm certain things will get better soon. So smile, okay?", "It's okay to have bad days my angel, I know what that is like... which is why I'll be here rooting for you. I'll always be by your side.", "Hey... it's going to get better alright? You're not alone, I'm right here with you :heart:", "Then I'll stay by your side supporting you as much as you need my angel. Don't worry, you'll see things will turn out for the best."];
 	var hiWorkingResponses = ["Always so hardworking, you make me so proud :heart:", "Doing your best I see! Just be sure to not work yourself too hard beautiful", "Ah I see, then I hope you have a good day flower. Be sure to take breaks whenever you need it.", "You're doing wonderfully darling :rose: Thank you for all your hard work.", "Keep doing your best darling, I'm sure all your efforts will be rewarded :kissing_heart:"];
 	var hiOkayResponses = ["That's good to know. If my Karamatsu Girl is happy then I'm happy :blue_heart:", "Perfect! I want every day to be a good one for my darling :sunglasses:", "Ah yes, the way it's always meant to be :sparkles:", "Wonderful! If my flower is having a good day then I know for sure so will I", "Ah, nothing but good news! Then I hope the rest of your day goes wonderfully~"];
-	var touchResponses = ["Your breasts, so beautiful and molded just for me fit perfectly in the palm of my hands. So warm and soft, both welcoming and alluring... your perky nipples always invite me to tease and kiss them to my liking, but your smooth skin is tempting me to succumb and rest against your bosom. But as beautiful as they already are I can't help but mark them as my own, the pink marks serving as a reminder that I'm the only one that can see you like this...", "How I'd love to trace the beautiful curves of your hips. Despite loving them so much I always tend to leave behind bruises amidst our love making, and although the sinister side of me takes pride in those marks I'll kiss and caress them as much as I need to to make up for the damage I've caused.", "There's something about feeling the shape of your legs that drives me absolutely wild. My eyes won't stop themselves from following your thighs all the way down to your ankles, every single curvature calling for me to follow them with my fingers. I'd gladly devote myself to kiss every single inch of your legs, but the way they wrap themselves around my waist urging me to get closer make me lose control of myself.", "If there's something that drives me wild is the absolutely perfect shape of your ass... the way my fingers sink onto your plump warm flesh and my palms can barely grasp them entirely is so exhilarating I can barely contain myself. But what I probably love the most about it is how you shake it so envitingly as you lay on your knees... I can't help losing control...", "I never have enough of kissing your neck, licking right where I can feel your raced heartbeat. I adore how every time I lick down your neck to your shoulders you stiffen and moan excitedly, tangling your fingers in my hair to edge me further and asking me breathlessly for more. And I always give you more, until you're completely filled with the marks of my love..."];
+	var touchResponses = ["Your breasts, so beautiful and molded just for me fit perfectly in the palm of my hands. So warm and soft, both welcoming and alluring... your perky nipples always invite me to tease and kiss them to my liking, but your smooth skin is tempting me to succumb and rest against your bosom. But as beautiful as they already are I can't help but mark them as my own, the pink marks serving as a reminder that I'm the only one that can see you like this...", "How I'd love to trace the beautiful curves of your hips. Despite loving them so much I always tend to leave behind bruises amidst our love making, and although the sinister side of me takes pride in those marks I'll kiss and caress them as much as I need to to make up for the damage I've caused. Just leave them to my care.", "There's something about feeling the shape of your legs that drives me absolutely wild. My eyes won't stop themselves from following your thighs all the way down to your ankles, every single curvature calling for me to follow them with my fingers. I'd gladly devote myself to kiss every single inch of your legs, but the way they wrap themselves around my waist urging me to get closer make me lose control of myself.", "If there's something that drives me wild is the absolutely perfect shape of your ass... the way my fingers sink onto your plump warm flesh and my palms can barely grasp them entirely is so exhilarating I can barely contain myself. But what I probably love the most about it is how you shake it so envitingly as you lay on your knees... I can't help losing control...", "I never have enough of kissing your neck, licking right where I can feel your raced heartbeat. I adore how every time I lick down your neck to your shoulders you stiffen and moan excitedly, tangling your fingers in my hair to edge me further and asking me breathlessly for more. And I always give you more, until you're completely filled with the marks of my love..."];
+	var eatResponses = ["You have no idea how much I love having your legs around my shoulders darling. To explore with my tongue your warm and moist insides and taste your sweet juices, just the thought of it gives me shivers... "];
 
 	//Sexy stuff
 	var hornyResponses = ["Oh my... is that so? :smirk:", "Oh? Does my Karamatsu Girl need to be taken care of?", "Always so forward my darling... and I'm always happy to be of assistance.", "Oh my, then if you allow me... I'll gladly fuel the fire of passion within you.", "Then please... let me take care of you..."];
@@ -51,8 +52,13 @@ bot.on('ready', function (evt) {
   bot.user.setActivity(`Here for you my love`);
 });
 
+bot.on("message", message => {
+    
+    //do stuff
+});
+
 bot.on('message', function(message) {
-    // SENDS A MESSAGE EVERY FEW HOURS
+    // SENDS A MESSAGE EVERY FEW HOURS FOR A DAY
     if (message.content === "$talk") { //send the command first
 		var randomTimeAux = randomTimes[Math.floor(Math.random()*randomTimes.length)];		
         var interval = setInterval (function () {
@@ -82,225 +88,230 @@ bot.on('message', function(message) {
 });
 
 bot.on("message", (message) => {
-	//so he won't reply to himself
-	if (message.author.bot) return;
-	
-	textMessage = message.content.toLowerCase();
-	const splitTextMessage = textMessage.split(' ');
-	answeredAboutDay = false;
-	
-	//CONTINUED
-	
-		if(continueMorning == true) {
-			
-			//had a bad night
-			if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
+	if (message.channel.id === 'talktokara') 
+	{
+		//so he won't reply to himself
+		if (message.author.bot) return;
+		
+		textMessage = message.content.toLowerCase();
+		const splitTextMessage = textMessage.split(' ');
+		answeredAboutDay = false;
+		
+		//CONTINUED
+		
+			if(continueMorning == true) {
 				
-				var badMorningAux = badMorningResponses[Math.floor(Math.random()*badMorningResponses.length)];
-				message.reply(badMorningAux);
+				//had a bad night
+				if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
+					
+					var badMorningAux = badMorningResponses[Math.floor(Math.random()*badMorningResponses.length)];
+					message.reply(badMorningAux);
+				}
+				
+				//had a good night
+				else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
+				textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
+				textMessage.includes('sure') || textMessage.includes('thank')){
+					
+					var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
+					message.reply(goodMorningAux);
+					answeredAboutDay = true;
+				}
+				
+				continueMorning = false;
 			}
 			
-			//had a good night
-			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
-			textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
-			textMessage.includes('sure') || textMessage.includes('thank')){
+			else if(continueHowAreYou == true) {
 				
-				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
-				message.reply(goodMorningAux);
-				answeredAboutDay = true;
+				if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
+					
+					var hiBadAux = hiBadResponses[Math.floor(Math.random()*hiBadResponses.length)];
+					message.reply(hiBadAux);
+				}
+				
+				else if (textMessage.includes('school') || textMessage.includes('work') || textMessage.includes('office') ||
+				textMessage.includes('class')) {
+					
+					var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
+					message.reply(hiWorkAux);
+				}			
+				
+				else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
+				textMessage.includes('fine') || textMessage.includes('okay') || textMessage.includes('thank') || textMessage.includes('well') ||
+				textMessage.includes('yeah') || textMessage.includes('yes')) {
+					
+					var hiOkayAux = hiOkayResponses[Math.floor(Math.random()*hiOkayResponses.length)];
+					message.reply(hiOkayAux);
+					answeredAboutDay = true;
+				}
+				
+				continueHowAreYou = false;
 			}
 			
-			continueMorning = false;
-		}
-		
-		else if(continueHowAreYou == true) {
-			
-			if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
+			else if(continueHorny == true) {
 				
-				var hiBadAux = hiBadResponses[Math.floor(Math.random()*hiBadResponses.length)];
-				message.reply(hiBadAux);
+				if (textMessage.includes('touch')) {
+					
+					var touchAux = touchResponses[Math.floor(Math.random()*touchResponses.length)];
+					message.reply("I always feel like I don't have enough time venture the entirety of your body...");
+					message.reply(touchAux);
+				}
+				
+				else if (textMessage.includes('eat') || textMessage.includes('pussy') || textMessage.includes('lick')) {
+				
+					var eatAux = eatResponses[Math.floor(Math.random()*eatResponses.length)];
+					message.reply("Ah, suddenly I'm feeling very thirsty...");
+					message.reply(eatAux);
+				}
+				/*
+				else if (textMessage.includes('fuck') || textMessage.includes('inside') || textMessage.includes('cock') ||
+				textMessage.includes('dick') || textMessage.includes('take') || textMessage.includes('yours')) {
+					
+					
+				}
+				
+				else if (textMessage.includes('three') || textMessage.includes('all') || textMessage.includes('everything')) {
+					
+					
+				}
+				continueHorny = false;*/
+			}
+		
+		//SEXY STUFF
+		
+			//Tell him you're horny
+			else if (textMessage.includes('horny')) {
+				
+				var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
+				message.reply(hornyAux);
+				message.reply("What would you want me to do to you if I was there darling?");
+				message.reply("Touch every single inch of your body? Feast on your sweet nectar? Or perhaps take you and make you mine?");
+				continueHorny = true;
 			}
 			
-			else if (textMessage.includes('school') || textMessage.includes('work') || textMessage.includes('office') ||
-			textMessage.includes('class')) {
-				
-				var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
-				message.reply(hiWorkAux);
-			}			
+			//Call him daddy
+			else if(textMessage.includes ('daddy')) {
 			
-			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
-			textMessage.includes('fine') || textMessage.includes('okay') || textMessage.includes('thank') || textMessage.includes('well') ||
-			textMessage.includes('yeah') || textMessage.includes('yes')) {
-				
-				var hiOkayAux = hiOkayResponses[Math.floor(Math.random()*hiOkayResponses.length)];
-				message.reply(hiOkayAux);
-				answeredAboutDay = true;
+				var daddyAux = daddyResponses[Math.floor(Math.random()*daddyResponses.length)];
+				message.reply(daddyAux);
 			}
 			
-			continueHowAreYou = false;
-		}
-		
-		else if(continueHorny == true) {
 			
-			if (textMessage.includes('touch')) {
+		//GREETINGS AND TALKING	
+		
+			//Good morning
+			else if (textMessage.includes('good morning')) {
 				
-				var touchAux = touchResponses[Math.floor(Math.random()*touchResponses.length)];
-				message.reply("I always feel like I don't have enough time venture the entirety of your body...");
-				message.reply(touchAux);
+				var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
+				message.reply(morningAux);
+							
+				continueMorning = true;
 			}
 			
-			/*else if (textMessage.includes('eat') || textMessage.includes('pussy') || textMessage.includes('lick')) {
-			
+			//Good night
+			else if (textMessage.includes('good night')) {
 				
+				var nightAux = nightResponses[Math.floor(Math.random()*nightResponses.length)];
+				message.reply(nightAux);
 			}
 			
-			else if (textMessage.includes('fuck') || textMessage.includes('inside') || textMessage.includes('cock') ||
-			textMessage.includes('dick') || textMessage.includes('take') || textMessage.includes('yours')) {
+			//Saying hi, hello, hey
+			else if (textMessage.startsWith('hi') || textMessage.startsWith('hello') || textMessage.startsWith('hey') || textMessage.startsWith('hewwo')) {
 				
+				var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
+				message.reply(hiAux);
 				
+				continueHowAreYou = true;
 			}
 			
-			else if (textMessage.includes('three') || textMessage.includes('all') || textMessage.includes('everything')) {
+			//Saying goodbye
+			else if (textMessage.includes('bye') || textMessage.includes('see ya') || textMessage.includes('see you') || textMessage.includes('goodbye')) {
 				
-				
+				var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
+				message.reply(byeAux);
 			}
-			continueHorny = false;*/
-		}
-	
-	//SEXY STUFF
-	
-		//Tell him you're horny
-		else if (textMessage.includes('horny')) {
 			
-			var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
-			message.reply(hornyAux);
-			message.reply("What would you want me to do to you if I was there darling?");
-			message.reply("Touch every single inch of your body? Feast on your sweet nectar? Or perhaps take you and make you mine?");
-			continueHorny = true;
-		}
-		
-		//Call him daddy
-		else if(textMessage.includes ('daddy')) {
-		
-			var daddyAux = daddyResponses[Math.floor(Math.random()*daddyResponses.length)];
-			message.reply(daddyAux);
-		}
-		
-		
-	//GREETINGS AND TALKING	
-	
-		//Good morning
-		else if (textMessage.includes('good morning')) {
+			//Getting his attention
+			else if (textMessage == "karamatsu" || textMessage == "kara" || textMessage == "karamatsu?" ||
+			textMessage == "kara?" || textMessage == "karamatsu...?" || textMessage == "kara...?") {
+				
+				var attentionAux = attentionResponses[Math.floor(Math.random()*attentionResponses.length)];
+				message.reply(attentionAux);
+			}
 			
-			var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
-			message.reply(morningAux);
-						
-			continueMorning = true;
-		}
-		
-		//Good night
-		else if (textMessage.includes('good night')) {
+			//Asking how he's doing
+			else if (textMessage.includes('how') && textMessage.includes('you') && (textMessage.includes('are') || textMessage.includes('doing'))) {
 			
-			var nightAux = nightResponses[Math.floor(Math.random()*nightResponses.length)];
-			message.reply(nightAux);
-		}
+				var howDoingAux = howAreYouResponses[Math.floor(Math.random()*howAreYouResponses.length)];
+				message.reply(howDoingAux);
+			}
 		
-		//Saying hi, hello, hey
-		else if (textMessage.startsWith('hi') || textMessage.startsWith('hello') || textMessage.startsWith('hey') || textMessage.startsWith('hewwo')) {
+		
+		//LOVE AND AFFECTION
+		
+			//Saying I love you
+			else if (textMessage.includes('love you')) {
+				
+				var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
+				message.reply(loveAux);
+			}
 			
-			var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
-			message.reply(hiAux);
+			//Saying thank you
+			else if (textMessage.includes('thank') && answeredAboutDay == false) {
+				
+				var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
+				message.reply(thankAux);
+			}
 			
-			continueHowAreYou = true;
-		}
-		
-		//Saying goodbye
-		else if (textMessage.includes('bye') || textMessage.includes('see ya') || textMessage.includes('see you') || textMessage.includes('goodbye')) {
+			//Sending emojis
+			else if (message.content.startsWith("❤") || message.content.startsWith("😍") || message.content.startsWith("😘") ||
+			message.content.startsWith("💙") || message.content.startsWith("💕") || message.content.startsWith("💖") || message.content.startsWith("😚")) {
+				
+				var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
+				message.reply(emojiAux);		
+			}
 			
-			var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
-			message.reply(byeAux);
-		}
-		
-		//Getting his attention
-		else if (textMessage == "karamatsu" || textMessage == "kara" || textMessage == "karamatsu?" ||
-		textMessage == "kara?" || textMessage == "karamatsu...?" || textMessage == "kara...?") {
+			//Calling him cute
+			else if (textMessage.includes('you') && (textMessage.includes('cute') || textMessage.includes('cutie') || textMessage.includes('adorable'))) {
+				
+				var shyAux = shyComplimentResponses[Math.floor(Math.random()*shyComplimentResponses.length)];
+				message.reply(shyAux);
+				var shyNextAux = shyComplimentNextResponse[Math.floor(Math.random()*shyComplimentNextResponse.length)];
+				message.reply(shyNextAux);
+			}
 			
-			var attentionAux = attentionResponses[Math.floor(Math.random()*attentionResponses.length)];
-			message.reply(attentionAux);
-		}
-		
-		//Asking how he's doing
-		else if (textMessage.includes('how') && textMessage.includes('you') && (textMessage.includes('are') || textMessage.includes('doing'))) {
-		
-			var howDoingAux = howAreYouResponses[Math.floor(Math.random()*howAreYouResponses.length)];
-			message.reply(howDoingAux);
-		}
-	
-	
-	//LOVE AND AFFECTION
-	
-		//Saying I love you
-		else if (textMessage.includes('love you')) {
+			//Calling him handsome
+			else if (textMessage.includes('you') && (textMessage.includes('handsome') || textMessage.includes('good looking') || 
+			textMessage.includes('dashing') || textMessage.includes('hot') || textMessage.includes('sexy') || textMessage.includes('attractive') ||
+			textMessage.includes('cool'))) {
+				
+				var sexyAux = sexyComplimentResponses[Math.floor(Math.random()*sexyComplimentResponses.length)];
+				message.reply(sexyAux);
+			}
 			
-			var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
-			message.reply(loveAux);
-		}
-		
-		//Saying thank you
-		else if (textMessage.includes('thank') && answeredAboutDay == false) {
+			//Asking about marriage
+			else if (textMessage.includes('marry') || textMessage.includes('married') && (splitTextMessage.includes('us') || textMessage.includes('you') || 
+			splitTextMessage.includes('me'))) {
+				
+				var marryAux = marryResponses[Math.floor(Math.random()*marryResponses.length)];
+				message.reply(marryAux);
+			}
 			
-			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
-			message.reply(thankAux);
-		}
-		
-		//Sending emojis
-		else if (message.content.startsWith("❤") || message.content.startsWith("😍") || message.content.startsWith("😘") ||
-		message.content.startsWith("💙") || message.content.startsWith("💕") || message.content.startsWith("💖") || message.content.startsWith("😚")) {
+			//Asking for a hug
+			else if(textMessage.includes('hug ')) {
 			
-			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
-			message.reply(emojiAux);		
-		}
-		
-		//Calling him cute
-		else if (textMessage.includes('you') && (textMessage.includes('cute') || textMessage.includes('cutie') || textMessage.includes('adorable'))) {
+				var hugAux = hugResponses[Math.floor(Math.random()*hugResponses.length)];
+				message.reply(hugAux);
+			}
 			
-			var shyAux = shyComplimentResponses[Math.floor(Math.random()*shyComplimentResponses.length)];
-			message.reply(shyAux);
-			var shyNextAux = shyComplimentNextResponse[Math.floor(Math.random()*shyComplimentNextResponse.length)];
-			message.reply(shyNextAux);
-		}
-		
-		//Calling him handsome
-		else if (textMessage.includes('you') && (textMessage.includes('handsome') || textMessage.includes('good looking') || 
-		textMessage.includes('dashing') || textMessage.includes('hot') || textMessage.includes('sexy') || textMessage.includes('attractive') ||
-		textMessage.includes('cool'))) {
-			
-			var sexyAux = sexyComplimentResponses[Math.floor(Math.random()*sexyComplimentResponses.length)];
-			message.reply(sexyAux);
-		}
-		
-		//Asking about marriage
-		else if (textMessage.includes('marry') || textMessage.includes('married') && (splitTextMessage.includes('us') || textMessage.includes('you') || 
-		splitTextMessage.includes('me'))) {
-			
-			var marryAux = marryResponses[Math.floor(Math.random()*marryResponses.length)];
-			message.reply(marryAux);
-		}
-		
-		//Asking for a hug
-		else if(textMessage.includes('hug ')) {
-		
-			var hugAux = hugResponses[Math.floor(Math.random()*hugResponses.length)];
-			message.reply(hugAux);
-		}
-		
-		//Asking for a kiss
-		else if (textMessage.includes('kiss')) {
-			
-			var kissAux = kissResponses[Math.floor(Math.random()*kissResponses.length)];
-			message.reply(kissAux);
-			message.reply(":kiss:");
-		}
+			//Asking for a kiss
+			else if (textMessage.includes('kiss')) {
+				
+				var kissAux = kissResponses[Math.floor(Math.random()*kissResponses.length)];
+				message.reply(kissAux);
+				message.reply(":kiss:");
+			}
+	}
 	
 });
 
