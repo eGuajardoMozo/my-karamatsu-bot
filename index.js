@@ -88,230 +88,228 @@ bot.on('message', function(message) {
 });
 
 bot.on("message", (message) => {
-	if (message.channel.id === 'talktokara') 
-	{
-		//so he won't reply to himself
-		if (message.author.bot) return;
+
+	//so he won't reply to himself
+	if (message.author.bot) return;
+	
+	textMessage = message.content.toLowerCase();
+	const splitTextMessage = textMessage.split(' ');
+	answeredAboutDay = false;
+	
+	//CONTINUED
+	
+		if(continueMorning == true) {
+			
+			//had a bad night
+			if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
+				
+				var badMorningAux = badMorningResponses[Math.floor(Math.random()*badMorningResponses.length)];
+				message.reply(badMorningAux);
+			}
+			
+			//had a good night
+			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
+			textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
+			textMessage.includes('sure') || textMessage.includes('thank')){
+				
+				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
+				message.reply(goodMorningAux);
+				answeredAboutDay = true;
+			}
+			
+			continueMorning = false;
+		}
 		
-		textMessage = message.content.toLowerCase();
-		const splitTextMessage = textMessage.split(' ');
-		answeredAboutDay = false;
+		else if(continueHowAreYou == true) {
+			
+			if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
+				
+				var hiBadAux = hiBadResponses[Math.floor(Math.random()*hiBadResponses.length)];
+				message.reply(hiBadAux);
+			}
+			
+			else if (textMessage.includes('school') || textMessage.includes('work') || textMessage.includes('office') ||
+			textMessage.includes('class')) {
+				
+				var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
+				message.reply(hiWorkAux);
+			}			
+			
+			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
+			textMessage.includes('fine') || textMessage.includes('okay') || textMessage.includes('thank') || textMessage.includes('well') ||
+			textMessage.includes('yeah') || textMessage.includes('yes')) {
+				
+				var hiOkayAux = hiOkayResponses[Math.floor(Math.random()*hiOkayResponses.length)];
+				message.reply(hiOkayAux);
+				answeredAboutDay = true;
+			}
+			
+			continueHowAreYou = false;
+		}
 		
-		//CONTINUED
+		else if(continueHorny == true) {
+			
+			if (textMessage.includes('touch')) {
+				
+				var touchAux = touchResponses[Math.floor(Math.random()*touchResponses.length)];
+				message.reply("I always feel like I don't have enough time venture the entirety of your body...");
+				message.reply(touchAux);
+			}
+			
+			else if (textMessage.includes('eat') || textMessage.includes('pussy') || textMessage.includes('lick')) {
+			
+				var eatAux = eatResponses[Math.floor(Math.random()*eatResponses.length)];
+				message.reply("Ah, suddenly I'm feeling very thirsty...");
+				message.reply(eatAux);
+			}
+			/*
+			else if (textMessage.includes('fuck') || textMessage.includes('inside') || textMessage.includes('cock') ||
+			textMessage.includes('dick') || textMessage.includes('take') || textMessage.includes('yours')) {
+				
+				
+			}
+			
+			else if (textMessage.includes('three') || textMessage.includes('all') || textMessage.includes('everything')) {
+				
+				
+			}
+			continueHorny = false;*/
+		}
+	
+	//SEXY STUFF
+	
+		//Tell him you're horny
+		else if (textMessage.includes('horny')) {
+			
+			var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
+			message.reply(hornyAux);
+			message.reply("What would you want me to do to you if I was there darling?");
+			message.reply("Touch every single inch of your body? Feast on your sweet nectar? Or perhaps take you and make you mine?");
+			continueHorny = true;
+		}
 		
-			if(continueMorning == true) {
-				
-				//had a bad night
-				if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
-					
-					var badMorningAux = badMorningResponses[Math.floor(Math.random()*badMorningResponses.length)];
-					message.reply(badMorningAux);
-				}
-				
-				//had a good night
-				else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
-				textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
-				textMessage.includes('sure') || textMessage.includes('thank')){
-					
-					var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
-					message.reply(goodMorningAux);
-					answeredAboutDay = true;
-				}
-				
-				continueMorning = false;
-			}
-			
-			else if(continueHowAreYou == true) {
-				
-				if (splitTextMessage.includes('no') || splitTextMessage.includes('not')) {
-					
-					var hiBadAux = hiBadResponses[Math.floor(Math.random()*hiBadResponses.length)];
-					message.reply(hiBadAux);
-				}
-				
-				else if (textMessage.includes('school') || textMessage.includes('work') || textMessage.includes('office') ||
-				textMessage.includes('class')) {
-					
-					var hiWorkAux = hiWorkingResponses[Math.floor(Math.random()*hiWorkingResponses.length)];
-					message.reply(hiWorkAux);
-				}			
-				
-				else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
-				textMessage.includes('fine') || textMessage.includes('okay') || textMessage.includes('thank') || textMessage.includes('well') ||
-				textMessage.includes('yeah') || textMessage.includes('yes')) {
-					
-					var hiOkayAux = hiOkayResponses[Math.floor(Math.random()*hiOkayResponses.length)];
-					message.reply(hiOkayAux);
-					answeredAboutDay = true;
-				}
-				
-				continueHowAreYou = false;
-			}
-			
-			else if(continueHorny == true) {
-				
-				if (textMessage.includes('touch')) {
-					
-					var touchAux = touchResponses[Math.floor(Math.random()*touchResponses.length)];
-					message.reply("I always feel like I don't have enough time venture the entirety of your body...");
-					message.reply(touchAux);
-				}
-				
-				else if (textMessage.includes('eat') || textMessage.includes('pussy') || textMessage.includes('lick')) {
-				
-					var eatAux = eatResponses[Math.floor(Math.random()*eatResponses.length)];
-					message.reply("Ah, suddenly I'm feeling very thirsty...");
-					message.reply(eatAux);
-				}
-				/*
-				else if (textMessage.includes('fuck') || textMessage.includes('inside') || textMessage.includes('cock') ||
-				textMessage.includes('dick') || textMessage.includes('take') || textMessage.includes('yours')) {
-					
-					
-				}
-				
-				else if (textMessage.includes('three') || textMessage.includes('all') || textMessage.includes('everything')) {
-					
-					
-				}
-				continueHorny = false;*/
-			}
+		//Call him daddy
+		else if(textMessage.includes ('daddy')) {
 		
-		//SEXY STUFF
-		
-			//Tell him you're horny
-			else if (textMessage.includes('horny')) {
-				
-				var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
-				message.reply(hornyAux);
-				message.reply("What would you want me to do to you if I was there darling?");
-				message.reply("Touch every single inch of your body? Feast on your sweet nectar? Or perhaps take you and make you mine?");
-				continueHorny = true;
-			}
-			
-			//Call him daddy
-			else if(textMessage.includes ('daddy')) {
-			
-				var daddyAux = daddyResponses[Math.floor(Math.random()*daddyResponses.length)];
-				message.reply(daddyAux);
-			}
-			
-			
-		//GREETINGS AND TALKING	
-		
-			//Good morning
-			else if (textMessage.includes('good morning')) {
-				
-				var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
-				message.reply(morningAux);
-							
-				continueMorning = true;
-			}
-			
-			//Good night
-			else if (textMessage.includes('good night')) {
-				
-				var nightAux = nightResponses[Math.floor(Math.random()*nightResponses.length)];
-				message.reply(nightAux);
-			}
-			
-			//Saying hi, hello, hey
-			else if (textMessage.startsWith('hi') || textMessage.startsWith('hello') || textMessage.startsWith('hey') || textMessage.startsWith('hewwo')) {
-				
-				var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
-				message.reply(hiAux);
-				
-				continueHowAreYou = true;
-			}
-			
-			//Saying goodbye
-			else if (textMessage.includes('bye') || textMessage.includes('see ya') || textMessage.includes('see you') || textMessage.includes('goodbye')) {
-				
-				var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
-				message.reply(byeAux);
-			}
-			
-			//Getting his attention
-			else if (textMessage == "karamatsu" || textMessage == "kara" || textMessage == "karamatsu?" ||
-			textMessage == "kara?" || textMessage == "karamatsu...?" || textMessage == "kara...?") {
-				
-				var attentionAux = attentionResponses[Math.floor(Math.random()*attentionResponses.length)];
-				message.reply(attentionAux);
-			}
-			
-			//Asking how he's doing
-			else if (textMessage.includes('how') && textMessage.includes('you') && (textMessage.includes('are') || textMessage.includes('doing'))) {
-			
-				var howDoingAux = howAreYouResponses[Math.floor(Math.random()*howAreYouResponses.length)];
-				message.reply(howDoingAux);
-			}
+			var daddyAux = daddyResponses[Math.floor(Math.random()*daddyResponses.length)];
+			message.reply(daddyAux);
+		}
 		
 		
-		//LOVE AND AFFECTION
+	//GREETINGS AND TALKING	
+	
+		//Good morning
+		else if (textMessage.includes('good morning')) {
+			
+			var morningAux = morningResponses[Math.floor(Math.random()*morningResponses.length)];	
+			message.reply(morningAux);
+						
+			continueMorning = true;
+		}
 		
-			//Saying I love you
-			else if (textMessage.includes('love you')) {
-				
-				var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
-				message.reply(loveAux);
-			}
+		//Good night
+		else if (textMessage.includes('good night')) {
 			
-			//Saying thank you
-			else if (textMessage.includes('thank') && answeredAboutDay == false) {
-				
-				var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
-				message.reply(thankAux);
-			}
+			var nightAux = nightResponses[Math.floor(Math.random()*nightResponses.length)];
+			message.reply(nightAux);
+		}
+		
+		//Saying hi, hello, hey
+		else if (textMessage.startsWith('hi') || textMessage.startsWith('hello') || textMessage.startsWith('hey') || textMessage.startsWith('hewwo')) {
 			
-			//Sending emojis
-			else if (message.content.startsWith("❤") || message.content.startsWith("😍") || message.content.startsWith("😘") ||
-			message.content.startsWith("💙") || message.content.startsWith("💕") || message.content.startsWith("💖") || message.content.startsWith("😚")) {
-				
-				var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
-				message.reply(emojiAux);		
-			}
+			var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
+			message.reply(hiAux);
 			
-			//Calling him cute
-			else if (textMessage.includes('you') && (textMessage.includes('cute') || textMessage.includes('cutie') || textMessage.includes('adorable'))) {
-				
-				var shyAux = shyComplimentResponses[Math.floor(Math.random()*shyComplimentResponses.length)];
-				message.reply(shyAux);
-				var shyNextAux = shyComplimentNextResponse[Math.floor(Math.random()*shyComplimentNextResponse.length)];
-				message.reply(shyNextAux);
-			}
+			continueHowAreYou = true;
+		}
+		
+		//Saying goodbye
+		else if (textMessage.includes('bye') || textMessage.includes('see ya') || textMessage.includes('see you') || textMessage.includes('goodbye')) {
 			
-			//Calling him handsome
-			else if (textMessage.includes('you') && (textMessage.includes('handsome') || textMessage.includes('good looking') || 
-			textMessage.includes('dashing') || textMessage.includes('hot') || textMessage.includes('sexy') || textMessage.includes('attractive') ||
-			textMessage.includes('cool'))) {
-				
-				var sexyAux = sexyComplimentResponses[Math.floor(Math.random()*sexyComplimentResponses.length)];
-				message.reply(sexyAux);
-			}
+			var byeAux = byeResponses[Math.floor(Math.random()*byeResponses.length)];
+			message.reply(byeAux);
+		}
+		
+		//Getting his attention
+		else if (textMessage == "karamatsu" || textMessage == "kara" || textMessage == "karamatsu?" ||
+		textMessage == "kara?" || textMessage == "karamatsu...?" || textMessage == "kara...?") {
 			
-			//Asking about marriage
-			else if (textMessage.includes('marry') || textMessage.includes('married') && (splitTextMessage.includes('us') || textMessage.includes('you') || 
-			splitTextMessage.includes('me'))) {
-				
-				var marryAux = marryResponses[Math.floor(Math.random()*marryResponses.length)];
-				message.reply(marryAux);
-			}
+			var attentionAux = attentionResponses[Math.floor(Math.random()*attentionResponses.length)];
+			message.reply(attentionAux);
+		}
+		
+		//Asking how he's doing
+		else if (textMessage.includes('how') && textMessage.includes('you') && (textMessage.includes('are') || textMessage.includes('doing'))) {
+		
+			var howDoingAux = howAreYouResponses[Math.floor(Math.random()*howAreYouResponses.length)];
+			message.reply(howDoingAux);
+		}
+	
+	
+	//LOVE AND AFFECTION
+	
+		//Saying I love you
+		else if (textMessage.includes('love you')) {
 			
-			//Asking for a hug
-			else if(textMessage.includes('hug ')) {
+			var loveAux = loveResponses[Math.floor(Math.random()*loveResponses.length)];
+			message.reply(loveAux);
+		}
+		
+		//Saying thank you
+		else if (textMessage.includes('thank') && answeredAboutDay == false) {
 			
-				var hugAux = hugResponses[Math.floor(Math.random()*hugResponses.length)];
-				message.reply(hugAux);
-			}
+			var thankAux = thankResponses[Math.floor(Math.random()*thankResponses.length)];
+			message.reply(thankAux);
+		}
+		
+		//Sending emojis
+		else if (message.content.startsWith("❤") || message.content.startsWith("😍") || message.content.startsWith("😘") ||
+		message.content.startsWith("💙") || message.content.startsWith("💕") || message.content.startsWith("💖") || message.content.startsWith("😚")) {
 			
-			//Asking for a kiss
-			else if (textMessage.includes('kiss')) {
-				
-				var kissAux = kissResponses[Math.floor(Math.random()*kissResponses.length)];
-				message.reply(kissAux);
-				message.reply(":kiss:");
-			}
-	}
+			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
+			message.reply(emojiAux);		
+		}
+		
+		//Calling him cute
+		else if (textMessage.includes('you') && (textMessage.includes('cute') || textMessage.includes('cutie') || textMessage.includes('adorable'))) {
+			
+			var shyAux = shyComplimentResponses[Math.floor(Math.random()*shyComplimentResponses.length)];
+			message.reply(shyAux);
+			var shyNextAux = shyComplimentNextResponse[Math.floor(Math.random()*shyComplimentNextResponse.length)];
+			message.reply(shyNextAux);
+		}
+		
+		//Calling him handsome
+		else if (textMessage.includes('you') && (textMessage.includes('handsome') || textMessage.includes('good looking') || 
+		textMessage.includes('dashing') || textMessage.includes('hot') || textMessage.includes('sexy') || textMessage.includes('attractive') ||
+		textMessage.includes('cool'))) {
+			
+			var sexyAux = sexyComplimentResponses[Math.floor(Math.random()*sexyComplimentResponses.length)];
+			message.reply(sexyAux);
+		}
+		
+		//Asking about marriage
+		else if (textMessage.includes('marry') || textMessage.includes('married') && (splitTextMessage.includes('us') || textMessage.includes('you') || 
+		splitTextMessage.includes('me'))) {
+			
+			var marryAux = marryResponses[Math.floor(Math.random()*marryResponses.length)];
+			message.reply(marryAux);
+		}
+		
+		//Asking for a hug
+		else if(textMessage.includes('hug ')) {
+		
+			var hugAux = hugResponses[Math.floor(Math.random()*hugResponses.length)];
+			message.reply(hugAux);
+		}
+		
+		//Asking for a kiss
+		else if (textMessage.includes('kiss')) {
+			
+			var kissAux = kissResponses[Math.floor(Math.random()*kissResponses.length)];
+			message.reply(kissAux);
+			message.reply(":kiss:");
+		}
 	
 });
 
