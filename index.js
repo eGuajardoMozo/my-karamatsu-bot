@@ -12,7 +12,7 @@ var continueHorny = false;
 	var randomKaraLoveTexts = ["I saw the stars last night and started thinking of you darling. Always glistening so brightly I can't help but smile, but of course the stars could never compare to your beauty. It brings a song to my heart. Today I think I'll go to the roof and write it down so I can sing it to you someday.", "Darling can I just say that you're absolutely amazing? So beautiful and smart, a bright mind and pure heart filled with so much love to share. Sometimes I can't believe how incredibly lucky I was to meet you.", "Today I filled so many pages of poems dedicated to you my flower. It's funny, ever since I met you I've been needing to buy notebooks more often, and the more pages I fill the more my heart swells with all this love I want to convey to you. It feels wonderful.", "I keep having dreams of a future together darling. Every single time I see us happily living together, spending each day by each other's side, and having a family of our own. The day our love takes shape into a brand new life I'll probably think I'm dreaming again. But even in a dream as long as it's with you, I'll be happy.", "Heh, don't mind me love, I just wanted to briefly remind you how much I've hopelessly fallen in love with you. Because I have, and every word that leaves your lips, every single touch of your hand against mine, and every smile directed just to me makes me want to soar and lose myself in this wonderful feeling. You make me the happiest man in the world."];
 	var randomKaraTalk = ["*sigh* sometimes I wish I was bird, with wings to fly wherever you were and be with you always. But then again, if I was a bird I wouldn't be able to kiss you. Perhaps there are birds that wished they were me, just so they could kiss you.", "While I was out today on the roof my sweet Jyushimatsu gave me some company and we sang until the sun set. We make a magnificent duet, but I wish I could sing with my other brothers as well. Surprisingly we were all blessed with good voices (some better than others :sunglasses:). One day I'll get all six of us to sing together.", "Last night we had some absolutely fantastic Gyudon for dinner! Courtesy of my very talented mother. You should come have dinner with us all one day darling, I'm sure you'd have a wonderful time.", "We went to visit our dear friend Chibita yesterday and as we always do we merrily drank the night away. Fear not darling, for even amidst the hazy stupor of alcohol I remain alert, and because our useless older brother passed out I took charge like the responsible older brother I am and safely brought all my brothers home! You should have seen it, I was so cool even Ichimatsu wouldn't deny it :sunglasses: It's a shame they don't remember anything.", "Ah darling I just woke up from the best nap I've had in days. None of my brothers woke me up abruptly and I feel absolutely fantastic! Heh, it's probably related to the fact that you were in my dreams :sparkles:"];
 	var randomBrotherTalk = ["Wouldn't you believe it darling? We just caught Osomatsu hiding from us some big pachinko winnings. But don't worry, we kindly reminded him the importance of being generous with his younger brothers.", "I saw Choromatsu reading one of his light novels behind a job magazine again. I don't know why he feels the need to hide his hobbies, I'm sure if he shared them it'd bring us closer to him!", "Recently I was accompanying Jyushimatsu to the park and saw Ichimatsu talking with some cats in an alley. It always amazes me how gentle and kind he is with them all, feeding them and patting them so amicably. My little brother sure is a very loving person isn't he?", "Ah, we got some mail today and my sweet Jyushimatsu was incredibly excited. It warms my heart to know he stays in contact with the sweet girl that captured his heart. Hopefully she'll be able to visit him soon.", "It was very cold the other night and Todomatsu cuddled up to me! Of course he was asleep and didn't notice, but darling I couldn't keep the smile off my face. I wish I could have taken a picture."];
-	var randomTimes = [25200000, 216000000, 19800000, 18000000, 14400000 ]; //in 7, 6, 5:30, 5 or 4 hours
+	var randomTimes = [216000000, 18000000, 14400000 ]; //in 6, 5 or 4 hours
 
 	//Continued
 	var goodMorningResponses = ["Music to my ears :sparkles: oh well, rather to my eyes I suppose. Heh.", "Wonderful! I wouldn't be surprised if it was because you dreamed of me", "I'm glad you slept well my love. It's a shame I wasn't there to kiss you awake, you must have looked lovely while you slept :heart:", "There's no better way to start the day than with a smile on your lips. I'm glad you slept well angel~", "That's wonderful, maybe someday I'll be blessed enough to wake up by your side"];
@@ -103,7 +103,7 @@ bot.on("message", (message) => {
 			//had a good night
 			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
 			textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
-			textMessage.includes('sure')){
+			textMessage.includes('sure') || textMessage.includes('thank')){
 				
 				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
 				message.reply(goodMorningAux);
@@ -174,7 +174,7 @@ bot.on("message", (message) => {
 			
 			var hornyAux = hornyResponses[Math.floor(Math.random()*hornyResponses.length)];
 			message.reply(hornyAux);
-			message.reply("What would you want me to do to you darling?");
+			message.reply("What would you want me to do to you if I was there darling?");
 			message.reply("Touch every single inch of your body? Feast on your sweet nectar? Or perhaps take you and make you mine?");
 			continueHorny = true;
 		}
@@ -206,7 +206,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Saying hi, hello, hey
-		else if (textMessage.startsWith('hi') || textMessage.startsWith('hello') || textMessage.startsWith('hey')) {
+		else if (textMessage.startsWith('hi') || textMessage.startsWith('hello') || textMessage.startsWith('hey') || textMessage.startsWith('hewwo')) {
 			
 			var hiAux = hiResponses[Math.floor(Math.random()*hiResponses.length)];
 			message.reply(hiAux);
