@@ -267,11 +267,13 @@ bot.on("message", (message) => {
 		else if (message.content.startsWith("❤") || message.content.startsWith("😍") || message.content.startsWith("😘") ||
 		message.content.startsWith("💙") || message.content.startsWith("💕") || message.content.startsWith("💖") || message.content.startsWith("😚")) {
 			
+			var emojiAuxAux = "";
 			for( i=0; i<Math.floor(Math.random() * 5); i++)
 			{
 				var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
-				message.reply(emojiAux);
-			}			
+				emojiAuxAux = emojiAuxAux + " " + emojiAux;
+			}
+			message.reply(emojiAux);	
 		}
 		
 		//Calling him cute
