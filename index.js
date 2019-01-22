@@ -270,12 +270,10 @@ bot.on("message", (message) => {
 			var emojiAuxAux = "";
 			for( i=0; i<Math.floor(Math.random() * 5); i++)
 			{
-				console.log(emojiAuxAux);
-				console.log("i = " + i);
 				var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
 				emojiAuxAux = emojiAuxAux + " " + emojiAux;
 			}
-			message.reply(emojiAux);	
+			message.reply(emojiAuxAux);	
 		}
 		
 		//Calling him cute
