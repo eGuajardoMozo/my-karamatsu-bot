@@ -38,7 +38,7 @@ var continueHorny = false;
 	//Love and affection
 	var loveResponses = ["And I love you my flower, more than you could ever imagine.", "I love you too my darling, more than anything else in this world.", "I love you the most my angel :heart:", "As do I... I love you so much darling.", "And I love you too my sweet angel. My heart will always be yours."];
 	var thankResponses = ["It's absolutely no problem my dear", "You're welcome my flower :rose: !", "It's my pleasure love", "You're more than welcome beautiful", "It's no problem at all my honey"];
-	var emojiResponses = [":heart: :heart: :heart:", ":heart_eyes: :heart_eyes: :heart_eyes:", ":kissing_heart: :kissing_heart: :kissing_heart:", ":blue_heart: :blue_heart: :blue_heart:", ":sunglasses: :rose:", ":heartpulse: :heartpulse: :heartpulse:", ":two_hearts: :two_hearts: :two_hearts:", ":sparkling_heart: :sparkling_heart: :sparkling_heart:", ":kissing_closed_eyes: :heart:"];
+	var emojiResponses = [":heart:", ":heart_eyes:", ":kissing_heart:", ":blue_heart:", ":rose:", ":heartpulse:", ":two_hearts:", ":sparkling_heart:", ":kissing_closed_eyes:"];
 	var shyComplimentResponses = ["E-Ehh??", ":flushed:", "M-Me??", "I-Is that what you think? :flushed:", "Eh?? R-Really?"];
 	var shyComplimentNextResponse = ["Well... I think you are much more than I am", "I personally would have used another word like handsome or cool... but thank you darling.", "Personally I would have gone for *incredibly* handsome, but... thank you so much darling.", "I-I think you got this backwards my honey", "Well I -ahem- usually don't go by that :flushed: but I'm glad you think so..."]
 	var sexyComplimentResponses = ["***Heh***. Thank you for noticing my darling!", "I sure am aren't I? :sunglasses: And it's only to be expected that I have an equally gorgeous and amazing girlfriend", "How kind of you to point it out darling! You have such good taste don't you? :heart:", "Right? It's a wonder how such a sinful and guilty man as myself was bestowed this much power.", "Why thank you my love! I know that this sinful body of mine could captivate every single heart on earth, but I'll always devote myself to you only."];
@@ -110,7 +110,7 @@ bot.on("message", (message) => {
 			//had a good night
 			else if (textMessage.includes('great') || textMessage.includes('good') || textMessage.includes('alright') || 
 			textMessage.includes('fine') || textMessage.includes('yes') || textMessage.includes('yeah') || 
-			textMessage.includes('sure') || textMessage.includes('thank')){
+			textMessage.includes('sure') || textMessage.includes('thank') || splitTextMessage.includes('did')){
 				
 				var goodMorningAux = goodMorningResponses[Math.floor(Math.random()*goodMorningResponses.length)];
 				message.reply(goodMorningAux);
@@ -267,8 +267,11 @@ bot.on("message", (message) => {
 		else if (message.content.startsWith("❤") || message.content.startsWith("😍") || message.content.startsWith("😘") ||
 		message.content.startsWith("💙") || message.content.startsWith("💕") || message.content.startsWith("💖") || message.content.startsWith("😚")) {
 			
-			var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
-			message.reply(emojiAux);		
+			for( int i=0; i<Math.floor(Math.random() * 5); i++)
+			{
+				var emojiAux = emojiResponses[Math.floor(Math.random()*emojiResponses.length)];
+				message.reply(emojiAux);
+			}			
 		}
 		
 		//Calling him cute
