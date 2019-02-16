@@ -68,8 +68,8 @@ bot.on('message', function(message) {
 		var randomTimeAux = randomTimes[Math.floor(Math.random()*randomTimes.length)];		
         var interval = setInterval (function () {
 			
-			var randomKaraLoveAux = randomKaraLoveTexts[Math.floor(Math.random()*randomKaraLoveTexts.length)];
-			message.channel.send(randomKaraLoveAux)
+			var randomKaraTalkAux = randomKaraTalk[Math.floor(Math.random()*randomKaraTalk.length)];
+			message.channel.send(randomKaraTalkAux)
 			.catch(console.error);
 					 
 			
