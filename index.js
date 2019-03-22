@@ -83,6 +83,7 @@ bot.on('message', function(message) {
         var interval = setInterval (function () {
 			
 			var choose = Math.floor(Math.random()* 2) + 1;
+			console.log(choose);
 			
 			if (choose == 1)
 			{
@@ -97,6 +98,7 @@ bot.on('message', function(message) {
 				var randomEnhancerAux = enhancer[Math.floor(Math.random()*enhancer.length)];
 				var randomAdjectiveAux = adjective[Math.floor(Math.random()*adjective.length)];
 				var randomPredicadoAux = predicado[Math.floor(Math.random()*predicado.length)];
+				console.log(randomNicknameAux);
 				message.channel.send(randomNicknameAux + "you're " + randomEnhancerAux + randomAdjectiveAux + randomPredicadoAux)
 				.catch(console.error);
 			}
