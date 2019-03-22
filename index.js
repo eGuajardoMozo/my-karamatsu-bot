@@ -360,7 +360,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Asking if you're pretty
-		else if((textMessage.includes('am i') || textMessage.includes('do you think I')) && (textMessage.includes('pretty') || textMessage.includes('cute') || textMessage.includes('beautiful') || textMessage.includes('good looking') || textMessage.includes('sexy'))) {
+		else if((textMessage.includes('am i') || textMessage.includes('do you think I')) && (textMessage.includes('pretty') || textMessage.includes('beautiful') || textMessage.includes('good looking') || textMessage.includes('sexy'))) {
 		
 			var prettyAux = prettyResponses[Math.floor(Math.random()*hugResponses.length)];
 			message.reply(prettyAux);
