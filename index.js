@@ -94,7 +94,7 @@ bot.on('message', function(message) {
 			
 			else if (choose == 2)
 			{
-				var randomNicknameAux = nickcame[Math.floor(Math.random()*nickname.length)];
+				var randomNicknameAux = nickname[Math.floor(Math.random()*nickname.length)];
 				var randomEnhancerAux = enhancer[Math.floor(Math.random()*enhancer.length)];
 				var randomAdjectiveAux = adjective[Math.floor(Math.random()*adjective.length)];
 				var randomPredicadoAux = predicado[Math.floor(Math.random()*predicado.length)];
