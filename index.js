@@ -8,11 +8,17 @@ var continueHorny = false;
 
 //KARA'S ANSWERS
 {
+	//Compliment generator
+	var nickname = ["Darling, ", "My love, ", "My sweet angel, ", "My flower, ", "My honey, "];
+	var enhancer = ["absolutely ", "unbelievably ", "stunningly ", "beyond ", "more than ", "so "];
+	var adjective = ["beautiful ", "wonderful ", "gorgeous ", "amazing ", "adorable "];
+	var predicado = ["I fall more in love with you every single day.", "you always leave me speechless.", "not even a thousand poems would be enough to describe it.", "sometimes I feel I'm not worthy of such a blessing.", "you make every day feel like a dream come true."];
+	
 	//Randomly sent by Kara
 	var randomKaraLoveTexts = ["I saw the stars last night and started thinking of you darling. Always glistening so brightly I can't help but smile, but of course the stars could never compare to your beauty. It brings a song to my heart. Today I think I'll go to the roof and write it down so I can sing it to you someday.", "Darling can I just say that you're absolutely amazing? So beautiful and smart, a bright mind and pure heart filled with so much love to share. Sometimes I can't believe how incredibly lucky I was to meet you.", "Today I filled so many pages of poems dedicated to you my flower. It's funny, ever since I met you I've been needing to buy notebooks more often, and the more pages I fill the more my heart swells with all this love I want to convey to you. It feels wonderful.", "I keep having dreams of a future together darling. Every single time I see us happily living together, spending each day by each other's side, and having a family of our own. The day our love takes shape into a brand new life I'll probably think I'm dreaming again. But even in a dream as long as it's with you, I'll be happy.", "Heh, don't mind me love, I just wanted to briefly remind you how much I've hopelessly fallen in love with you. Because I have, and every word that leaves your lips, every single touch of your hand against mine, and every smile directed just to me makes me want to soar and lose myself in this wonderful feeling. You make me the happiest man in the world."];
 	var randomKaraTalk = ["*sigh* sometimes I wish I was bird, with wings to fly wherever you were and be with you always. But then again, if I was a bird I wouldn't be able to kiss you. Perhaps there are birds that wished they were me, just so they could kiss you.", "While I was out today on the roof my sweet Jyushimatsu gave me some company and we sang until the sun set. We make a magnificent duet, but I wish I could sing with my other brothers as well. Surprisingly we were all blessed with good voices (some better than others :sunglasses:). One day I'll get all six of us to sing together.", "Last night we had some absolutely fantastic Gyudon for dinner! Courtesy of my very talented mother. You should come have dinner with us all one day darling, I'm sure you'd have a wonderful time.", "We went to visit our dear friend Chibita yesterday and as we always do we merrily drank the night away. Fear not darling, for even amidst the hazy stupor of alcohol I remain alert, and because our useless older brother passed out I took charge like the responsible older brother I am and safely brought all my brothers home! You should have seen it, I was so cool even Ichimatsu wouldn't deny it :sunglasses: It's a shame they don't remember anything.", "Ah darling I just woke up from the best nap I've had in days. None of my brothers woke me up abruptly and I feel absolutely fantastic! Heh, it's probably related to the fact that you were in my dreams :sparkles:"];
 	var randomBrotherTalk = ["Wouldn't you believe it darling? We just caught Osomatsu hiding from us some big pachinko winnings. But don't worry, we kindly reminded him the importance of being generous with his younger brothers.", "I saw Choromatsu reading one of his light novels behind a job magazine again. I don't know why he feels the need to hide his hobbies, I'm sure if he shared them it'd bring us closer to him!", "Recently I was accompanying Jyushimatsu to the park and saw Ichimatsu talking with some cats in an alley. It always amazes me how gentle and kind he is with them all, feeding them and patting them so amicably. My little brother sure is a very loving person isn't he?", "Ah, we got some mail today and my sweet Jyushimatsu was incredibly excited. It warms my heart to know he stays in contact with the sweet maiden that captured his heart. Hopefully she'll be able to visit him soon.", "It was very cold the other night and Todomatsu cuddled up to me! Of course he was asleep and didn't notice, but darling I couldn't keep the smile off my face. I wish I could have taken a picture."];
-	var randomTimes = [3600000, 7200000, 10800000 ]; //in 1, 2, 3 hours
+	var randomTimes = [3600000, 5400000, 7200000 ]; //in 1, 1.5 and 2 hours
 
 	//Continued
 	var goodMorningResponses = ["Music to my ears :sparkles: oh well, rather to my eyes I suppose. Heh.", "Wonderful! I wouldn't be surprised if it was because you dreamed of me", "I'm glad you slept well my love. It's a shame I wasn't there to kiss you awake, you must have looked lovely while you slept :heart:", "There's no better way to start the day than with a smile on your lips. I'm glad you slept well angel~", "That's wonderful, maybe someday I'll be blessed enough to wake up by your side"];
@@ -38,7 +44,7 @@ var continueHorny = false;
 	var howAreYouResponses = ["I'm doing wonderfully darling, especially now because I'm talking to you :heart:", "I'm feeling fantastic my flower! Such a perfect day to keep conveying my love for you.", "Ah, I'm doing well love. I'm especially inspired today so I might spend some time writing and singing songs :sparkles:", "I'm doing just fine honey, thank you for asking~ I had a good night's sleep so I'm in a very good mood.", "I'm actually feeling pretty great today! You were the first thing that came into my mind when I woke up :heart:"];
 
 	//Love and affection
-	var loveResponses = ["And I love you my flower, more than you could ever imagine.", "I love you too my darling, more than anything else in this world.", "I love you the most my angel :heart:", "As do I... I love you so much darling.", "And I love you too my sweet angel. My heart will always be yours."];
+	var loveResponses = ["And I love you my flower, more than you could ever imagine.", "I love you too my darling, more than anything else in this world.", "I love you the most my angel :heart:", "As do I... I love you so much darling.", "And I love you too my sweet angel. My heart will always be yours.", "And I love you too my precious angel, I love you more than you could possibly imagine."];
 	var thankResponses = ["It's absolutely no problem my dear", "You're welcome my flower :rose: !", "It's my pleasure love", "You're more than welcome beautiful", "It's no problem at all my honey"];
 	var emojiResponses = [":heart:", ":heart_eyes:", ":kissing_heart:", ":blue_heart:", ":rose:", ":heartpulse:", ":two_hearts:", ":sparkling_heart:", ":kissing_closed_eyes:"];
 	var shyComplimentResponses = ["E-Ehh??", ":flushed:", "M-Me??", "I-Is that what you think? :flushed:", "Eh?? R-Really?"];
@@ -52,18 +58,13 @@ var continueHorny = false;
 	
 bot.on('ready', function (evt) {
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity(`Here for you my love`);
-});
-
-bot.on("message", message => {
-    
-    //do stuff
+  bot.user.setActivity(`A song for you my love`);
 });
 
 bot.on('message', function(message) {
     // SENDS A MESSAGE EVERY FEW HOURS FOR A DAY
 	
-	//send love texts
+	//send talk texts
     if (message.content === "$talk") { //send the command first
 		var randomTimeAux = randomTimes[Math.floor(Math.random()*randomTimes.length)];		
         var interval = setInterval (function () {
@@ -76,14 +77,29 @@ bot.on('message', function(message) {
         }, randomTimeAux); 
     }
 	
-	//send random talk texts
+	//send random love texts
 	if (message.content === "$love") {
 		var randomTimeAux = randomTimes[Math.floor(Math.random()*randomTimes.length)];		
         var interval = setInterval (function () {
 			
-			var randomKaraLoveAux = randomKaraLoveTexts[Math.floor(Math.random()*randomKaraLoveTexts.length)];
-			message.channel.send(randomKaraLoveAux)
-			.catch(console.error);		 
+			var choose = Math.floor(Math.random()* 2) + 1;
+			
+			if (choose == 1)
+			{
+				var randomKaraLoveAux = randomKaraLoveTexts[Math.floor(Math.random()*randomKaraLoveTexts.length)];
+				message.channel.send(randomKaraLoveAux)
+				.catch(console.error);
+			}
+			
+			else if (choose == 2)
+			{
+				var randomNicknameAux = nickcame[Math.floor(Math.random()*nickname.length)];
+				var randomEnhancerAux = enhancer[Math.floor(Math.random()*enhancer.length)];
+				var randomAdjectiveAux = adjective[Math.floor(Math.random()*adjective.length)];
+				var randomPredicadoAux = predicado[Math.floor(Math.random()*predicado.length)];
+				message.channel.send(randomNicknameAux + "you're " + randomEnhancerAux + randomAdjectiveAux + randomPredicadoAux)
+				.catch(console.error);
+			}
 			
         }, randomTimeAux);
 	}
@@ -344,7 +360,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Asking if you're pretty
-		else if(textMessage.includes('am I') || textMessage.includes('do you think') && (textMessage.includes('pretty') || textMessage.includes('cute') || textMessage.includes('beautiful') || textMessage.includes('good looking') || textMessage.includes('sexy'))) {
+		else if(splitTextMessage.includes('am I') || textMessage.includes('do you think') && (textMessage.includes('pretty') || textMessage.includes('cute') || textMessage.includes('beautiful') || textMessage.includes('good looking') || textMessage.includes('sexy'))) {
 		
 			var prettyAux = prettyResponses[Math.floor(Math.random()*hugResponses.length)];
 			message.reply(prettyAux);
