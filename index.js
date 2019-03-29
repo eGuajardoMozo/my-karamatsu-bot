@@ -289,7 +289,7 @@ bot.on("message", (message) => {
 		}
 		
 		//Sending him a picture
-		else if (message.content.endswith('.jpg') || message.content.endswith('.png') || message.content.endswith('.jpeg'))
+		else if (message.attachments.size > 0)
 		{
 			message.reply("WOW WOW WOW!!!");
 		}
