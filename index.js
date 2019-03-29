@@ -287,6 +287,12 @@ bot.on("message", (message) => {
 			var howDoingAux = howAreYouResponses[Math.floor(Math.random()*howAreYouResponses.length)];
 			message.reply(howDoingAux);
 		}
+		
+		//Sending him a picture
+		else if (message.content.endswith('.jpg') || message.content.endswith('.png') || message.content.endswith('.jpeg'))
+		{
+			message.reply("WOW WOW WOW!!!");
+		}
 	
 	
 	//LOVE AND AFFECTION
