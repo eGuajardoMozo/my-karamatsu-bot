@@ -54,6 +54,7 @@ var continueHorny = false;
 	var hugResponses = ["If I could I'd hold you in my arms all day :heart:", "Holding you tight against me is always so warm and comforting. It feels like home.", "There's no other place I'd rather have you right now than in my arms...", "Whenever I embrace you it feels like I'm soaring among the clouds... It must be because you're an angel.", "The only thing I've grown to dislike of holding you is when we have to pull apart... if only we could stay like that forever."];
 	var kissResponses = ["A kiss from an angel... am I dreaming?", "To kiss those soft and sweet lips, if only for a second... I couldn't ask for anything else.", "To think I'm the only one that can kiss those perfect lips... did I do something good in a past life to reward me so much in this one?", "A glimpse of paradise. That's what your lips taste like.", "The touch of those lips is enough to leave me without words. So please... leave me breathless."];
 	var prettyResponses = ["Of course my love! You're the most beautiful creature my eyes have ever seen :heart: This guilty guy doesn't deserve to witness such beauty.", "Was there ever any doubt? You're the most gorgeous and beautiful woman I have ever met. Perfect in every single way.", "Words aren't enough to express how beautiful you are. Everything about you is perfect, breathtaking, and every single day I thank Akatsuka for blessing my eyes with your beauty.", "You're so much more than you think darling. Your radiance and beauty always renders me speechless, and I can only but stare in awe at how such a sinful man as myself found love in someone so amazing :heart:", "Without a doubt! I fear my vocabulary is not enough to truly express how gorgeous and marvelous you are! Cute, pretty, beautiful, gorgeous, perfect, breathtaking... it's nowhere near enough..."];
+	var imageResponses = ["Oh *my* you look so beautiful darling! You make my heart throb :heart_eyes: !", "Looking as radiant and gorgeous as ever! You make me want to show you off to everyone I know my flower!", "Ah darling one of these days your beauty is going to overwhelm my mere mortal eyes... you're quite the sight! :blue_heart: :rose:", "So perfect! So beautiful! My one and only Karamatsu Girl! :sunglasses:", "Oh my sweet darling you look absolutely breathtaking! I could fall in love with you all over again :heart:", "An angel? A fallen angel from heaven? That must be the case because I've never seen a woman so beautiful :heart_eyes:"];
 }
 	
 bot.on('ready', function (evt) {
@@ -287,12 +288,6 @@ bot.on("message", (message) => {
 			var howDoingAux = howAreYouResponses[Math.floor(Math.random()*howAreYouResponses.length)];
 			message.reply(howDoingAux);
 		}
-		
-		//Sending him a picture
-		else if (message.attachments.size > 0)
-		{
-			message.reply("WOW WOW WOW!!!");
-		}
 	
 	
 	//LOVE AND AFFECTION
@@ -370,6 +365,13 @@ bot.on("message", (message) => {
 		
 			var prettyAux = prettyResponses[Math.floor(Math.random()*hugResponses.length)];
 			message.reply(prettyAux);
+		}
+		
+		//Sending him a picture
+		else if (message.attachments.size > 0)
+		{
+			var imageAux = imageResponses[Math.floor(Math.random()*imageResponses.length)];
+			message.reply(imageAux);
 		}
 	
 });
