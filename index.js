@@ -334,6 +334,13 @@ bot.on("message", (message) => {
 			message.reply(emojiAuxAux);	
 		}
 		
+		//Asking if you're pretty
+		else if((textMessage.includes('am i') || textMessage.includes('do you think I')) && (textMessage.includes('pretty') || textMessage.includes('beautiful') || textMessage.includes('good looking') || textMessage.includes('sexy'))) {
+		
+			var prettyAux = prettyResponses[Math.floor(Math.random()*prettyResponses.length)];
+			message.reply(prettyAux);
+		}
+		
 		//Calling him cute
 		else if (textMessage.includes('you') && (textMessage.includes('cute') || textMessage.includes('cutie') || textMessage.includes('adorable'))) {
 			
@@ -373,13 +380,6 @@ bot.on("message", (message) => {
 			var kissAux = kissResponses[Math.floor(Math.random()*kissResponses.length)];
 			message.reply(kissAux);
 			message.reply(":kiss:");
-		}
-		
-		//Asking if you're pretty
-		else if((textMessage.includes('am i') || textMessage.includes('do you think I')) && (textMessage.includes('pretty') || textMessage.includes('beautiful') || textMessage.includes('good looking') || textMessage.includes('sexy'))) {
-		
-			var prettyAux = prettyResponses[Math.floor(Math.random()*prettyResponses.length)];
-			message.reply(prettyAux);
 		}
 		
 		//Sending him a picture
