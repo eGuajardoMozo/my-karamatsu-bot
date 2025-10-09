@@ -84,13 +84,13 @@ function scheduleDailyMessage() {
 		case 4:
 			chosenArray = randomGreet;
 			break;
-		case 5:
+		/*case 5:
 			var randomNicknameAux = nickname[Math.floor(Math.random()*nickname.length)];
 			var randomEnhancerAux = enhancer[Math.floor(Math.random()*enhancer.length)];
 			var randomAdjectiveAux = adjective[Math.floor(Math.random()*adjective.length)];
 			var randomPredicadoAux = predicado[Math.floor(Math.random()*predicado.length)];
 			var generatedComplimentArray = [randomNicknameAux + "you're " + randomEnhancerAux + randomAdjectiveAux + randomPredicadoAux];
-			chosenArray = generatedComplimentArray;
+			chosenArray = generatedComplimentArray;*/
 			
 	}
 	
