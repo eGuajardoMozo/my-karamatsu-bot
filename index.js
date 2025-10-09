@@ -110,7 +110,7 @@ function scheduleDailyMessage() {
 }
 	
 	
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(`Listening on port ${PORT}`);
 });
 
