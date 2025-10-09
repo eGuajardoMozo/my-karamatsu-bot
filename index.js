@@ -68,7 +68,7 @@ function scheduleDailyMessage() {
 	const delay = next - now;
 	var targetHour = Math.random() * (13 - 8) + 8;
 	var targetMinute = Math.random() * (59 - 1) + 1;
-	var chosenResponseArrayNumber = Math.random() * (5 - 1) + 1;
+	var chosenResponseArrayNumber = Math.random() * (4 - 1) + 1;
 	let chosenArray;
 	
 	switch (chosenResponseArrayNumber) {
@@ -84,14 +84,14 @@ function scheduleDailyMessage() {
 		case 4:
 			chosenArray = randomGreet;
 			break;
-		/*case 5:
+		case 5:
 			var randomNicknameAux = nickname[Math.floor(Math.random()*nickname.length)];
 			var randomEnhancerAux = enhancer[Math.floor(Math.random()*enhancer.length)];
 			var randomAdjectiveAux = adjective[Math.floor(Math.random()*adjective.length)];
 			var randomPredicadoAux = predicado[Math.floor(Math.random()*predicado.length)];
 			var generatedComplimentArray = [randomNicknameAux + "you're " + randomEnhancerAux + randomAdjectiveAux + randomPredicadoAux];
-			chosenArray = generatedComplimentArray;*/
-			
+			chosenArray = generatedComplimentArray;
+			break;
 	}
 	
 	next.setHours(targetHour, targetMinute, 0, 0);
