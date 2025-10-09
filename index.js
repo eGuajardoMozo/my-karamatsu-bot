@@ -64,10 +64,13 @@ var continueHorny = false;
 
 function scheduleDailyMessage() {
 	const now = new Date();
-	const next = new Date();
-	const delay = next - now;
-	var targetHour = Math.floor(Math.random() * (13 - 8 + 1)) + 8;
-	var targetMinute = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
+	const targetHour = Math.floor(Math.random() * (13 - 8 + 1)) + 8;
+	const targetMinute = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
+	
+	const target = new Date();
+	target.setHours(targetHour, targetMinute, 0, 0);
+	if (target <= now) target.setDate(target.getDate() + 1);
+	
 	var chosenResponseArrayNumber = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
 	var chosenArray;
 	
@@ -94,10 +97,9 @@ function scheduleDailyMessage() {
 			break;
 	}
 	
-	next.setHours(targetHour, targetMinute, 0, 0);
-	if (next <= now) next.setDate(next.getDate() + 1);
+	const delay = target - now;
 	
-	setTimeout(async () => {
+	setTimeout(() => {
 		var randomKaraGenerated = chosenArray[Math.floor(Math.random()*chosenArray.length)];
 		const user = await bot.fetchUser("377571084955942914");
 		await user.send(randomKaraGenerated);
@@ -105,7 +107,7 @@ function scheduleDailyMessage() {
 	}, delay);
 }
 	
-bot.on('ready', function (evt) {
+bot.on('ready', () => {
   console.log(`${bot.user.username} is online!`);
   bot.user.setActivity(`a song for you my love`);
   scheduleDailyMessage();
