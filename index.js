@@ -1,7 +1,9 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
-const port = process.env.PORT || 4000;
-const host = "0.0.0.0";
+const http = require('http');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
 
 var continueMorning = false;
 var continueHowAreYou = false;
@@ -107,6 +109,11 @@ function scheduleDailyMessage() {
 	}, delay);
 }
 	
+	
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});
+
 bot.on('ready', () => {
   console.log(`${bot.user.username} is online!`);
   bot.user.setActivity(`a song for you my love`);
