@@ -66,9 +66,9 @@ function scheduleDailyMessage() {
 	const now = new Date();
 	const next = new Date();
 	const delay = next - now;
-	var targetHour = Math.floor(Math.random() * (13 - 8) + 8);
-	var targetMinute = Math.floor(Math.random() * (59 - 1) + 1);
-	var chosenResponseArrayNumber = Math.floor(Math.random() * (5 - 1) + 1);
+	var targetHour = Math.floor(Math.random() * (13 - 8 + 1)) + 8;
+	var targetMinute = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
+	var chosenResponseArrayNumber = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
 	var chosenArray;
 	
 	console.log("chosenResponseArrayNumber:", chosenResponseArrayNumber);
@@ -104,7 +104,6 @@ function scheduleDailyMessage() {
 	if (next <= now) next.setDate(next.getDate() + 1);
 	
 	setTimeout(async () => {
-		console.log("chose array size", chosenArray.length);
 		var randomKaraGenerated = chosenArray[Math.floor(Math.random()*chosenArray.length)];
 		message.channel.send(randomKaraGenerated)
 		scheduleDailyMessage();
