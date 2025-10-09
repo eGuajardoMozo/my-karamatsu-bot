@@ -111,7 +111,7 @@ function scheduleDailyMessage() {
 	
 	
 app.listen(port, () => {
-  console.log(`Listening on port ${PORT}`);
+  console.log(`Listening on port ${port}`);
 });
 
 bot.on('ready', () => {
