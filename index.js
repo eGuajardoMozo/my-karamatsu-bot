@@ -89,7 +89,7 @@ function scheduleDailyMessage() {
 			var randomEnhancerAux = enhancer[Math.floor(Math.random()*enhancer.length)];
 			var randomAdjectiveAux = adjective[Math.floor(Math.random()*adjective.length)];
 			var randomPredicadoAux = predicado[Math.floor(Math.random()*predicado.length)];
-			var generatedComplimentArray = [randomNicknameAux + "you're " + randomEnhancerAux + randomAdjectiveAux + randomPredicadoAux];
+			var generatedComplimentArray = [randomNicknameAux + "you're " + randomEnhancerAux + randomAdjectiveAux + randomPredicadoAux, randomNicknameAux + "you're " + randomEnhancerAux + randomAdjectiveAux + randomPredicadoAux];
 			chosenArray = generatedComplimentArray;
 			
 	}
