@@ -101,8 +101,8 @@ function scheduleDailyMessage() {
 	
 	setTimeout(() => {
 		var randomKaraGenerated = chosenArray[Math.floor(Math.random()*chosenArray.length)];
-		const user = await bot.fetchUser("377571084955942914");
-		await user.send(randomKaraGenerated);
+		const user = bot.fetchUser("377571084955942914");
+		user.send(randomKaraGenerated);
 		scheduleDailyMessage();
 	}, delay);
 }
