@@ -1,7 +1,5 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
-const express = require("express");
-const app = express();
 const port = process.env.PORT || 4000;
 const host = "0.0.0.0";
 
@@ -105,10 +103,6 @@ function scheduleDailyMessage() {
 		scheduleDailyMessage();
 	}, delay);
 }
-
-app.listen(port, host, () => {
-	console.log(`Server listening on ${host}:${port}`);
-})
 	
 bot.on('ready', function (evt) {
   console.log(`${bot.user.username} is online!`);
