@@ -400,4 +400,4 @@ bot.on("message", (message) => {
 	
 });
 
-bot.login("MTQyNTY5NDk1NDU4MzQ5MDU5MA.Gbg3Ia.No6nJ1rktyfCeEHajICszqmZm6L8m3gDTVh_DI");
+bot.login("placeholder");

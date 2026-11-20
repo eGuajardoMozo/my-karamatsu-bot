@@ -66,7 +66,7 @@ var continueHorny = false;
 
 function scheduleDailyMessage() {
 	const now = new Date();
-	const targetHour = Math.floor(Math.random() * (17 - 16 + 1)) + 16;
+	const targetHour = Math.floor(Math.random() * (13 - 11 + 1)) + 11;
 	const targetMinute = Math.floor(Math.random() * (59 - 1 + 1)) + 1;
 	
 	const target = new Date();
